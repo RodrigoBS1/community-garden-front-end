@@ -18,3 +18,4 @@ See the application [Community Garden](https://community-garden.onrender.com) fo
 
 //TEAM MEMEBERS///
 Shineka Solomon
+Giovanny Farajallah
