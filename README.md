@@ -14,3 +14,7 @@ We use React, Node.js, Sequelize, PostgreSQL
 
 See the application [Community Garden](https://community-garden.onrender.com) for more information.
 
+
+
+//TEAM MEMEBERS///
+Shineka Solomon
