@@ -11,4 +11,39 @@ function App() {
   );
 }
 
+
+// --Floating Nav Bar starts here!--
+
+
+
+
+
+
+
+
+
+
+// --Floating Nav Bar ends here!--
+
+
+
+
+
+
+
+
+
+// --Education sections starts here!--
+
+
+
+
+
+
+// --Education sections ends here!--
+
+
+
 export default App;
+
+
