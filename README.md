@@ -16,6 +16,9 @@ See the application [Community Garden](https://community-garden.onrender.com) fo
 
 
 
-//TEAM MEMEBERS///
+//TEAM MEMBERS///
 Shineka Solomon
 Giovanny Farajallah
+Pita NOT-Badila =)
+Rodrigo Silva
+
