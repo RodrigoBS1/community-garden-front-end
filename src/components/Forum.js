@@ -89,6 +89,19 @@ const Forum = () => {
     setArticles(updatedArticles);
   };
 
+  const toggleContent = (articleId) => {
+    const updatedArticles = articles.map((article) => {
+      if (article.id === articleId) {
+        return {
+          ...article,
+          showContent: !article.showContent,
+        };
+      }
+      return article;
+    });
+    setArticles(updatedArticles);
+  };
+
   return (
     <div>
         <h2>Forum Section</h2>
@@ -98,7 +111,10 @@ const Forum = () => {
         <div key={article.id}>
           <img src={article.img} alt={article.title}/>
           <h3>{article.title}</h3>
-          <p>{article.text}</p>
+          <p>{article.showContent ? article.text : 'Content hidden'}</p>
+          <button onClick={() => toggleContent(article.id)}>
+            {article.showContent ? 'Hide Content' : 'Show Content'}
+          </button>
           <button onClick={() => handleLike(article.id)}>
             Like ({article.likes})
           </button>
