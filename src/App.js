@@ -2,7 +2,9 @@ import './App.css';
 import Forum from './components/Forum';
 import GeneralCarousel from './components/GeneralCarousel';
 
-import SeasonPoster from './components/SeasonPoster'
+
+import SeasonInfo from './components/SeasonInfo'
+import GrowInfo from './components/GrowInfo'
 
 function App() {
   return (
@@ -10,8 +12,15 @@ function App() {
       <header className="App-header">
       <h1> Community Garden</h1>
       </header>
-    {/* testing for SeasonPoster component. This will be removed. */}
-    <SeasonPoster season="Summer"/>
+    {/* testing for SeasonPoster component and GrowInfo. This will be removed. */}
+    
+    <SeasonInfo season="Summer" />
+    <GrowInfo 
+    name="Watermelon" 
+    companion="corn,radishes,marigolds"
+    water="Regular watering"
+    zone="3-11"
+    />
     </div>
   );
 }
