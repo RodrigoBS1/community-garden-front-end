@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,8 +85,6 @@
   /* transition:opacity 0.9s; */
   text-align:center;
   font-size: 3.5rem;
-  
-  
 }
 
  /* END CSS for SeasonPoster Component  */
@@ -95,12 +93,20 @@
 
 .forum-section {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-direction: row;
   margin: 5rem;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   border: 1px solid white;
 
+}
+
+
+
+.images-article {
+  width: 350px;
+  height: auto;
 }
 
 /* Forum style ends here */

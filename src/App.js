@@ -9,11 +9,9 @@ function App() {
     <div className="App">
       <header className="App-header">
       <h1> Community Garden</h1>
-      <Forum />
       </header>
     {/* testing for SeasonPoster component. This will be removed. */}
     <SeasonPoster season="Summer"/>
-    <GeneralCarousel /> 
     </div>
   );
 }
