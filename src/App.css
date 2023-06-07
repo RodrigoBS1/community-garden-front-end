@@ -37,6 +37,7 @@
   }
 }
 
+
  /* START CSS for SeasonPoster Component */
 .seasonPoster{
     position:relative;
@@ -89,3 +90,19 @@
 }
 
  /* END CSS for SeasonPoster Component  */
+
+/* Forum style start here */
+
+.forum-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 5rem;
+  justify-content: center;
+  border: 1px solid white;
+
+}
+
+
+/* Forum style ends here */
+
