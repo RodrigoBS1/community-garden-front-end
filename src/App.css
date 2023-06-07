@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,13 +40,7 @@
 
  /* START CSS for SeasonInfo Component */
 
-.SeasonInfo h1{
-  font-size:4.5rem;
-}
-.SeasonInfo ul li{
-  font-size:3.5rem;
-  list-style-type: none;
-}
+
 
  /* END CSS for SeasonInfo Component  */
 
@@ -54,14 +48,86 @@
 
 .forum-section {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-direction: row;
   margin: 5rem;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   border: 1px solid white;
 
 }
 
 
+
+.images-article {
+  width: 350px;
+  height: auto;
+}
+
 /* Forum style ends here */
 
+
+/* General Carousel starts here */
+
+.App {
+  width: 100%;
+  height: 100%;
+
+}
+
+.carousel1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.Gencard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  cursor: pointer;
+  z-index: 0;
+  opacity: 0;
+  transition: 400ms;
+  border-radius: 10%;
+}
+
+.Gencard--active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 99;
+  border-radius: 10%;
+  
+  
+}
+
+.Gencard--left {
+  transform: translateX(-125%) scale(0.8);
+  transition: 500ms;
+  opacity: 0.3;
+  width: 200px;
+  height: 250px;
+  border-radius: 10%;
+}
+
+.Gencard--right {
+  transform: translateX(125%) scale(0.8);
+  transition: 500ms;
+  opacity: 0.3;
+  width: 200px;
+  height: 250px;
+  border-radius: 10%;
+}
+.imgCards {
+  border-radius: 10%;
+}
+
+
+
+/* General Carousel ends here */

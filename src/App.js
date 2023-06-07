@@ -1,5 +1,6 @@
 import './App.css';
 import Forum from './components/Forum';
+import GeneralCarousel from './components/GeneralCarousel';
 
 
 import SeasonInfo from './components/SeasonInfo'
@@ -10,7 +11,6 @@ function App() {
     <div className="App">
       <header className="App-header">
       <h1> Community Garden</h1>
-      <Forum />
       </header>
     {/* testing for SeasonPoster component and GrowInfo. This will be removed. */}
     
