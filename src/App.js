@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import Forum from './components/Forum';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
       <h1> Community Garden</h1>
+      <Forum />
       </header>
     </div>
   );
@@ -41,6 +42,13 @@ function App() {
 
 
 // --Education sections ends here!--
+
+// --Forum sections starts here!--
+
+
+
+// --Forum sections ends here!--
+
 
 
 
