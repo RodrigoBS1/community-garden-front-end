@@ -1,23 +1,23 @@
-import summer from '..images/summer.png'
-import fall from '..images/fall.png'
-import winter from '..images/winter.png'
-import spring from '..images/spring.png'
+import summer from '..images/cg6.jpg'
+import fall from '..images/cg7.jpg'
+import winter from '..images/cg8.jpg'
+import spring from '..images/cg9.jpg'
 
 const SeasonPoster = ( {season} ) => {
 
     const choosePic = ({season}) => {
         switch (season) {
             case 'Summer':
-                return '../images/summer.png'
+                return summer
                 break
             case 'Fall':
-                return '../images/fall.png'
+                return fall
                 break
             case 'Winter':
-                return '../images/winter.png'
+                return winter
                 break
             case 'Spring':
-                return '../images/spring.png'
+                return spring
                 break
         }
     }
