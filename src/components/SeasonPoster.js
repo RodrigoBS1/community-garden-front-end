@@ -1,7 +1,7 @@
-import summer from '..images/cg6.jpg'
-import fall from '..images/cg7.jpg'
-import winter from '..images/cg8.jpg'
-import spring from '..images/cg9.jpg'
+import summer from '../images/cg6.jpeg'
+import fall from '../images/cg7.jpeg'
+import winter from '../images/cg8.jpeg'
+import spring from '../images/cg9.jpeg'
 
 const SeasonPoster = ( {season} ) => {
 
@@ -21,13 +21,21 @@ const SeasonPoster = ( {season} ) => {
                 break
         }
     }
+    
+    const handleClick = event =>{
+        <SeasonInfo season={season}/>
+    }
 
     return(
         <div className="seasonPoster">
             <div className="seasonImgBox">
-                <img src= {choosePic({season})} className="seasonImg"/>
+                <img 
+                src= {choosePic({season})} 
+                className="seasonImg"
+                onclick={handleClick}
+                />
             </div>
-            <h1 className> {season} </h1>
+            <h1> {season} </h1>
         </div>
     )
 }
