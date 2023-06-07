@@ -3,6 +3,8 @@ import fall from '../images/cg7.jpeg'
 import winter from '../images/cg8.jpeg'
 import spring from '../images/cg9.jpeg'
 
+import SeasonInfo from './SeasonInfo'
+
 const SeasonPoster = ( {season} ) => {
 
     const choosePic = ({season}) => {
