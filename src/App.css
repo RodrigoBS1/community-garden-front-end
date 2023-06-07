@@ -38,58 +38,17 @@
 }
 
 
- /* START CSS for SeasonPoster Component */
-.seasonPoster{
-    position:relative;
-    width:40%;
-    height:auto;
-    /* border-radius: 50px; */
-    overflow: hidden;
-    display:flex;
-    align-items: center;
-    justify-content:center;
+ /* START CSS for SeasonInfo Component */
+
+.SeasonInfo h1{
+  font-size:4.5rem;
+}
+.SeasonInfo ul li{
+  font-size:3.5rem;
+  list-style-type: none;
 }
 
-.seasonImgBox{
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:100%;
-    width:100%;
-    /* padding:20px; */
-
-}
-
-.seasonImg{
-  width:100%;
-  /* opacity:.5s; */
-  height:auto;
-  /* transition:.5s; */
-}
-
-.seasonPoster h1{
-  position:absolute; 
-  bottom:0;
-  left:0;  
-  width:100%;
-  height:100%;
-  /* opacity:0;  */
-  background:rgba(0,0,0,0.3);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  /* margin:20px;  */
-  color:#fff;
-  /* transition:opacity 0.9s; */
-  text-align:center;
-  font-size: 3.5rem;
-  
-  
-}
-
- /* END CSS for SeasonPoster Component  */
+ /* END CSS for SeasonInfo Component  */
 
 /* Forum style start here */
 
