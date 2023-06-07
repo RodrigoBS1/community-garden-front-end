@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import Forum from './components/Forum';
 
 import SeasonPoster from './components/SeasonPoster'
 
@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       <h1> Community Garden</h1>
+      <Forum />
       </header>
     {/* testing for SeasonPoster component. This will be removed. */}
     <SeasonPoster season="Summer"/>
@@ -45,6 +46,13 @@ function App() {
 
 
 // --Education sections ends here!--
+
+// --Forum sections starts here!--
+
+
+
+// --Forum sections ends here!--
+
 
 
 
