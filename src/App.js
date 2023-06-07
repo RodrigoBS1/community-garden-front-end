@@ -1,5 +1,6 @@
 import './App.css';
 import Forum from './components/Forum';
+import GeneralCarousel from './components/GeneralCarousel';
 
 import SeasonPoster from './components/SeasonPoster'
 
@@ -11,9 +12,6 @@ function App() {
       </header>
     {/* testing for SeasonPoster component. This will be removed. */}
     <SeasonPoster season="Summer"/>
-
-    {/* testing for Forum component. This will be removed. */}
-    <Forum />
     </div>
   );
 }
