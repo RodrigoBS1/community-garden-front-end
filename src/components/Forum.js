@@ -1,10 +1,14 @@
+import img1 from "../images/cg1.jpeg"
+import img2 from "../images/cg2.jpeg"
+import img3 from "../images/cg3.jpeg"
+import img4 from "../images/cg4.jpeg"
 import React, { useState } from "react";
 
 const Forum = () => {
   const [articles, setArticles] = useState([
     {
       id: 1,
-      img: "/Users/corcoding/Workspace/community-garden/src/images/cg1.jpeg",
+      img: img1,
       title: "Article 1",
       text: "This is the content of article 1.",
       likes: 0,
@@ -13,7 +17,7 @@ const Forum = () => {
     },
     {
       id: 2,
-      img: "../images/cg1.jpeg",
+      img: img2,
       title: "Article 2",
       text: "This is the content of article 2.",
       likes: 0,
@@ -22,7 +26,7 @@ const Forum = () => {
     },
     {
       id: 3,
-      img: "../images/cg1.jpeg",
+      img: img3,
       title: "Article 3",
       text: "This is the content of article 3.",
       likes: 0,
@@ -32,7 +36,7 @@ const Forum = () => {
     {
       id: 4,
       title: "Article 4",
-      img: "../images/cg1.jpeg",
+      img: img4,
       text: "This is the content of article 4.",
       likes: 0,
       dislikes: 0,
@@ -109,8 +113,8 @@ const Forum = () => {
       
       {articles.map((article) => (
         <div key={article.id}>
-          <img src={article.img} alt={article.title}/>
           <h3>{article.title}</h3>
+          <img src={article.img} alt={article.title} className='images-article'/>
           <p>{article.showContent ? article.text : 'Content hidden'}</p>
           <button onClick={() => toggleContent(article.id)}>
             {article.showContent ? 'Hide Content' : 'Show Content'}
