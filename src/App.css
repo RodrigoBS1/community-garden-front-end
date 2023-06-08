@@ -46,6 +46,46 @@
 
  /* END CSS for SeasonInfo Component  */
 
+ /* START CSS for GrowInfo Component */
+
+ .fullScreen{
+  width:100%;
+  height:100%;
+  background-color:white;
+ }
+ .GrowInfoCard{
+  width:40%;
+  height:auto;
+  border:black solid 5px;
+  display:flex;
+  flex-direction:column;
+  margin-right:auto;
+  margin-left:auto;
+  padding:10px;
+
+  
+
+ }
+
+ .growImgBox{
+  width:95%;
+  height: auto;
+  border:black solid 5px;
+  margin-right:auto;
+  margin-left:auto;
+  margin-top:15px;
+  border-radius:15px;
+  
+
+ }
+
+ .growImg{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+ }
+ /* END CSS for GrowInfo Component */
+
 /* Forum style start here */
 
 .forum-section {

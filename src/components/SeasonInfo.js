@@ -1,8 +1,16 @@
 import { useEffect, useState } from 'react'
+import { useNavigate , Link } from 'react-router-dom'
+import GrowInfo from './GrowInfo'
 
 const SeasonInfo = ( {season} ) =>{
 
     const [ veggies , setVeggies ] = useState([])
+
+    const navigate = useNavigate()
+
+    const toGrowInfo = (growName) =>{
+        navigate(`/growinfo`)
+    }
 
     const fetchVeggieData = (season) => {
         
@@ -39,7 +47,7 @@ console.log(veggies)
                 <ul>
                     {veggies.map((data)=>{
                         return(
-                            <li  key = {data.id} onClick={() => goToEd([data.name,data.companion,data.water,data.zone])}>{data.name}</li>
+                            <li  key = {data.id}><Link to ='/growinfo' state = {{plantName:data.name, companion:data.companion, water:data.water, zone:data.zone}}>{data.name} </Link></li>
                         )
                     })}
                 </ul>
