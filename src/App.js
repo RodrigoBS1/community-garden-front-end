@@ -21,6 +21,7 @@ function App() {
     water="Regular watering"
     zone="3-11"
     />
+    <GeneralCarousel />
     </div>
   );
 }
