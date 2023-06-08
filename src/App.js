@@ -13,7 +13,25 @@ function App() {
       <header className="App-header">
         <h1> Community Garden</h1>
       </header>
+
       {/* testing for SeasonPoster component and GrowInfo. This will be removed. */}
+
+   
+    
+
+    <SeasonInfo season="Summer" />
+    <GrowInfo 
+    name="Watermelon" 
+    companion="corn,radishes,marigolds"
+    water="Regular watering"
+    zone="3-11"
+    />
+    <GeneralCarousel />
+    <br />
+    <hr />
+    <hr />
+    <Forum />
+
 
       <SeasonInfo season="Summer" />
       <GrowInfo
@@ -25,7 +43,7 @@ function App() {
       <div>
         <Forum />
       </div>
-    <Forum />
+   
 
 
     <GeneralCarousel />
