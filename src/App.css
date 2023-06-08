@@ -49,22 +49,26 @@
 /* Forum style start here */
 
 .forum-section {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
+  display: block;
   margin: 5rem;
+  padding: 2rem;
   justify-content: space-around;
   align-items: center;
   border: 1px solid white;
 
 }
 
-
-
 .images-article {
   width: 350px;
   height: auto;
 }
+
+.comment-form {
+  margin: 1rem;
+  padding: 2rem;
+}
+
+
 
 /* Forum style ends here */
 

@@ -1,71 +1,32 @@
-import img1 from "../images/cg1.jpeg"
-import img2 from "../images/cg2.jpeg"
-import img3 from "../images/cg3.jpeg"
-import img4 from "../images/cg4.jpeg"
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Forum = () => {
-  const [articles, setArticles] = useState([
-    {
-      id: 1,
-      img: img1,
-      title: "Article 1",
-      text: "This is the content of article 1.",
-      likes: 0,
-      dislikes: 0,
-      comments: [],
-    },
-    {
-      id: 2,
-      img: img2,
-      title: "Article 2",
-      text: "This is the content of article 2.",
-      likes: 0,
-      dislikes: 0,
-      comments: [],
-    },
-    {
-      id: 3,
-      img: img3,
-      title: "Article 3",
-      text: "This is the content of article 3.",
-      likes: 0,
-      dislikes: 0,
-      comments: [],
-    },
-    {
-      id: 4,
-      title: "Article 4",
-      img: img4,
-      text: "This is the content of article 4.",
-      likes: 0,
-      dislikes: 0,
-      comments: [],
-    },
-  ]);
+  const [articles, setArticles] = useState([]);
 
-  const [newComment, setNewComment] = useState("");
+  useEffect(() => {
+    // Fetch articles from the external database
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/forum');
+        const data = await response.json();
 
-  const handleNewCommentChange = (event) => {
-    setNewComment(event.target.value);
-  };
+        // Provide default values for likes and dislikes
+        const updatedArticles = data.map((article) => ({
+          ...article,
+          likes: article.likes || 0,
+          dislikes: article.dislikes || 0,
+        }));
 
-  const handleNewCommentSubmit = (event, articleId) => {
-    event.preventDefault();
-    if (newComment.trim() !== "") {
-      const updatedArticles = articles.map((article) => {
-        if (article.id === articleId) {
-          return {
-            ...article,
-            comments: [...article.comments, newComment],
-          };
-        }
-        return article;
-      });
-      setArticles(updatedArticles);
-      setNewComment("");
-    }
-  };
+        setArticles(updatedArticles);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleLike = (articleId) => {
     const updatedArticles = articles.map((article) => {
@@ -93,62 +54,58 @@ const Forum = () => {
     setArticles(updatedArticles);
   };
 
-  const toggleContent = (articleId) => {
-    const updatedArticles = articles.map((article) => {
-      if (article.id === articleId) {
-        return {
-          ...article,
-          showContent: !article.showContent,
-        };
-      }
-      return article;
-    });
-    setArticles(updatedArticles);
+  const handleNewCommentSubmit = (event, articleId, newComment) => {
+    event.preventDefault();
+    if (newComment.trim() !== '') {
+      const updatedArticles = articles.map((article) => {
+        if (article.id === articleId) {
+          const comments = article.comments || []; // Handle undefined comments array
+          return {
+            ...article,
+            comments: [...comments, newComment],
+          };
+        }
+        return article;
+      });
+      setArticles(updatedArticles);
+    }
   };
 
+  
   return (
-    <div>
-        <h2>Forum Section</h2>
     <div className='forum-section'>
-      
-      {articles.map((article) => (
-        <div key={article.id}>
-          <h3>{article.title}</h3>
-          <img src={article.img} alt={article.title} className='images-article'/>
-          <p>{article.showContent ? article.text : 'Content hidden'}</p>
-          <button onClick={() => toggleContent(article.id)}>
-            {article.showContent ? 'Hide Content' : 'Show Content'}
-          </button>
-          <button onClick={() => handleLike(article.id)}>
-            Like ({article.likes})
-          </button>
-          <button onClick={() => handleDislike(article.id)}>
-            Dislike ({article.dislikes})
-          </button>
-          <h4>Comments</h4>
-          {article.comments.length === 0 ? (
-            <p>No comments available.</p>
-          ) : (
-            <ul>
-              {article.comments.map((comment, index) => (
-                <li key={index}>{comment}</li>
-              ))}
-            </ul>
-          )}
-          <form onSubmit={(event) => handleNewCommentSubmit(event, article.id)}>
-            <input
-              type="text"
-              value={newComment}
-              onChange={handleNewCommentChange}
-              placeholder="Write your comment..."
-            />
-            <button type="submit">Add Comment</button>
-          </form>
-        </div>
-      ))}
-    </div>
+      <h2>Forum Section</h2>
+      <Carousel>
+        {articles.map((article) => (
+          <div key={article.id}>
+            <h3>{article.article}</h3>
+            <p>{article.content}</p>
+            <button onClick={() => handleLike(article.id)}>Like ({article.likes})</button>
+            <button onClick={() => handleDislike(article.id)}>Dislike ({article.dislikes})</button>
+            <h4>Comments</h4>
+            {article.comments && article.comments.length === 0 ? (
+              <p>No comments available.</p>
+            ) : (
+              <p>
+                {article.comments && article.comments.map((comment, index) => (
+                  <p key={index}>{comment}</p>
+                ))}
+              </p>
+            )}
+            <form className='comment-form' onSubmit={(event) => handleNewCommentSubmit(event, article.id, event.target.comment.value)}>
+              <input
+                type="text"
+                placeholder="Write your comment..."
+                name="comment"
+              />
+              <button type="submit">Add Comment</button>
+            </form>
+          </div>
+        ))}
+      </Carousel>
     </div>
   );
 };
 
 export default Forum;
+
