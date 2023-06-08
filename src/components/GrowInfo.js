@@ -6,16 +6,17 @@ const GrowInfo = ({ name,companion,water,zone }) => {
 
     const fetchItemData = (name) => {
         
-        const url = `https://www.growstuff.org/crops/${name}.json`
-        fetch(url)
-        .then(response => {
-            return response.json()
-        })
-        .then(data => {
-            setGrowItem(data)
+        // const url = `https://www.growstuff.org/crops/${name}.json`
+        // const url = `https://www.growstuff.org/crops/carrot.json`
+        // fetch(url)
+        // .then(response => {
+        //     return response.json()
+        // })
+        // .then(data => {
+        //     setGrowItem(data)
             
-            console.log(growItem)
-        })
+        //     console.log(growItem)
+        // })
     }
 
     useEffect(()=>{

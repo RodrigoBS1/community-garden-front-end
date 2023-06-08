@@ -39,7 +39,9 @@
 
 
  /* START CSS for SeasonInfo Component */
-
+.seasonSide ul li{
+  list-style-type: none;
+}
 
 
  /* END CSS for SeasonInfo Component  */
