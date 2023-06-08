@@ -1,6 +1,8 @@
-import "./App.css";
-import Forum from "./components/Forum";
-import GeneralCarousel from "./components/GeneralCarousel";
+
+import './App.css';
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom"
+import Forum from './components/Forum';
+import GeneralCarousel from './components/GeneralCarousel';
 
 import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
@@ -23,8 +25,21 @@ function App() {
       <div>
         <Forum />
       </div>
-    
-      <GeneralCarousel />
+    <Forum />
+
+
+    <GeneralCarousel />
+   
+    <Router>
+      <Routes>
+        
+        <Route path = '/seasoninfo' element = {<SeasonInfo season='Summer'/>} />
+        <Route path = '/growinfo' element = {<GrowInfo />} />
+      </Routes>  
+
+      <SeasonInfo season="Spring" />
+    </Router>
+
     </div>
   );
 }
