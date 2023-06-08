@@ -1,4 +1,5 @@
 import './App.css';
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom"
 import Forum from './components/Forum';
 import GeneralCarousel from './components/GeneralCarousel';
 
@@ -14,17 +15,25 @@ function App() {
       </header>
     {/* testing for SeasonPoster component and GrowInfo. This will be removed. */}
     
-    <SeasonInfo season="Summer" />
-    <GrowInfo 
-    name="Watermelon" 
-    companion="corn,radishes,marigolds"
-    water="Regular watering"
-    zone="3-11"
-    />
+
+    
+
+
 
     <Forum />
 
+
     <GeneralCarousel />
+   
+    <Router>
+      <Routes>
+        
+        <Route path = '/seasoninfo' element = {<SeasonInfo season='Summer'/>} />
+        <Route path = '/growinfo' element = {<GrowInfo />} />
+      </Routes>  
+
+      <SeasonInfo season="Spring" />
+    </Router>
     </div>
   );
 }
