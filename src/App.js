@@ -15,7 +15,14 @@ function App() {
       </header>
     {/* testing for SeasonPoster component and GrowInfo. This will be removed. */}
     
+
     
+
+
+
+    <Forum />
+
+
     <GeneralCarousel />
    
     <Router>
