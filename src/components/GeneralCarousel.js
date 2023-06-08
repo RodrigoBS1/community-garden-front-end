@@ -3,6 +3,8 @@ import FallFruits from "../images/FallFruits.jpeg";
 import SpringFruits from "../images/SpringFruits.jpeg";
 import WinterFruits from "../images/WinterFruits.jpeg";
 import SummerFruits from "../images/SummerFruits.jpeg";
+import GardenArticle from "../images/GardenArticle.jpeg";
+// import GardeningForum from "../image/GardeningForum.jpeg";
 
 function GeneralCarousel() {
   const [index, setIndex] = useState(0);
@@ -12,6 +14,10 @@ function GeneralCarousel() {
     { id: "2", image: WinterFruits },
     { id: "3", image: SummerFruits },
     { id: "4", image: SpringFruits },
+    { id: "5", image: GardenArticle },
+    // { id: "6", image: GardeningForum },
+
+
   ];
 
   const mod = (n, m) => {
@@ -28,7 +34,7 @@ function GeneralCarousel() {
   }, [index]);
 
   return (
-    <div className="App">
+    <div className="MainCar">
       <div className="carousel1">
         {/* <img className="Gencard Gencard--active" src={FallFruits} alt="Fall" />
         <img className="Gencard Gencard--left" src={WinterFruits} alt="Winter" />
