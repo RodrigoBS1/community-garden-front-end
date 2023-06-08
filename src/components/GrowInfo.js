@@ -45,6 +45,7 @@ const GrowInfo = ({ name, companionPlants, watering, zones }) => {
                 <p>{water}</p>
                 <h3>Companion Plants:</h3>
                 <p>{companion}</p>
+                <div className="exit"><i className='bx bx-x'></i></div>
 
 
 

@@ -54,6 +54,7 @@
   background-color:white;
  }
  .GrowInfoCard{
+  position:relative;
   width:40%;
   height:auto;
   border:black solid 5px;
@@ -83,6 +84,22 @@
   width:100%;
   height:100%;
   object-fit:cover;
+ }
+
+ .exit{
+  width:auto;
+  height:auto;
+  position:absolute;
+  right:10px;
+  bottom:20px;
+  background-color:black;
+  border-radius:10px;
+
+ }
+ .exit i{
+  font-size:40px;
+  color:white;
+  
  }
  /* END CSS for GrowInfo Component */
 
