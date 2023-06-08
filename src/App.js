@@ -16,9 +16,18 @@ function App() {
     {/* testing for SeasonPoster component and GrowInfo. This will be removed. */}
     
 
-    
-
-
+    <SeasonInfo season="Summer" />
+    <GrowInfo 
+    name="Watermelon" 
+    companion="corn,radishes,marigolds"
+    water="Regular watering"
+    zone="3-11"
+    />
+    <GeneralCarousel />
+    <br />
+    <hr />
+    <hr />
+    <Forum />
 
     <Forum />
 
@@ -34,6 +43,7 @@ function App() {
 
       <SeasonInfo season="Spring" />
     </Router>
+
     </div>
   );
 }
