@@ -9,7 +9,7 @@ const Forum = () => {
     // Fetch articles from the external database
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3001/forum');
+        const response = await fetch('https://community-garden-api.onrender.com/forum');
         const data = await response.json();
 
         // Provide default values for likes and dislikes
