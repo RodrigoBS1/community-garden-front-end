@@ -18,7 +18,7 @@ function App() {
     <br />
     <hr />
     <hr />
-    <Forum />
+   
 
 
     
@@ -28,7 +28,7 @@ function App() {
    
 
 
-    <GeneralCarousel />
+   
    
     <Router>
       <Routes>
