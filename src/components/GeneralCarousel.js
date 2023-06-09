@@ -8,9 +8,11 @@ import GardenArticle from '../images/GardenArticle.jpeg';
 // import GardeningForum from '../images/GardeningForum.jpeg';
 function GeneralCarousel() {
  const [index, setIndex] = useState(0);
- const findSeason = (index) => {
-  return imgCards[mod(index, imgCards.length)].season;
- };
+ let season
+//  const findSeason = (index) => {
+//   console.log(imgCards[mod(index, imgCards.length)].season)
+//   return imgCards[mod(index, imgCards.length)].season;
+//  };
  const imgCards = [
   { id: '1', image: FallFruits, season: 'Fall' },
   { id: '2', image: WinterFruits, season: 'Winter' },
@@ -39,6 +41,8 @@ function GeneralCarousel() {
      let className = '';
      if (i === index) {
       className = 'Gencard Gencard--active';
+      season = imgCards[i].season
+      console.log(season)
      } else if (i === indexRight) {
       className = 'Gencard Gencard--right';
      } else if (i === indexLeft) {
@@ -47,11 +51,17 @@ function GeneralCarousel() {
       className = 'Gencard';
      }
      return (
-      <Link
-       to={{ pathname: '/seasoninfo', state: { season: findSeason(i) } }}
-       key={item.id}
+      // <Link
+      //   to = '/seasoninfo' state = {{ season: season} }
+      //  key={item.id}
+      // >
+      //  <img className={className} src={item.image} alt={item.season} />
+      // </Link>
+       <Link  
+        to = {`/seasoninfo/${season}`}
+       
       >
-       <img className={className} src={item.image} alt={item.season} />
+       <img key={item.id} className={className} src={item.image} alt={item.season} />
       </Link>
      );
     })}

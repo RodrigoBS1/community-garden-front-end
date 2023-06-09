@@ -28,10 +28,10 @@ function App() {
       <div>
         <Forum />
       </div>
-      <SeasonInfo season="Spring" />
+      {/* <SeasonInfo season="Spring" /> */}
       <Routes>
         
-        <Route path = '/seasoninfo' element = {<SeasonInfo season='Summer'/>} />
+        <Route path = '/seasoninfo/:season' element = {<SeasonInfo />} />
         <Route path = '/growinfo' element = {<GrowInfo />} />
       </Routes>   
 
