@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate , Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import GrowInfo from './GrowInfo'
 
 import FallFruits from "../images/FallFruits.jpeg";
@@ -10,7 +11,7 @@ import SummerFruits from "../images/SummerFruits.jpeg";
 
 
 
-const SeasonInfo = ( {season} ) =>{
+const SeasonInfo = ( ) =>{
 
     const [ showHideSeasonInfo, setShowHideSeasonInfo ] = useState(true) 
   
@@ -18,8 +19,11 @@ const SeasonInfo = ( {season} ) =>{
         console.log('clicked to hide component')
         setShowHideSeasonInfo(false)
     }
+    let { season } = useParams()
+    console.log(season)
+    console.log(showHideSeasonInfo)
+    console.log(season)
     
-
     const choosePic = (season) => {
         switch (season){
             case 'Fall':
