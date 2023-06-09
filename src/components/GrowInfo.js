@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate , Link } from 'react-router-dom'
+import noImg from '../images/noImg.png'
 
 const GrowInfo = ({ name, companionPlants, watering, zones, season }) => {
 
@@ -23,7 +24,13 @@ const GrowInfo = ({ name, companionPlants, watering, zones, season }) => {
     useEffect(() => {
         fetchItemData(name)
     }, [])
-
+// const chooseImg = () =>{
+//     console.log(growItem.main_image_path)
+//     if(growItem.main_image_path){
+//         return growItem.main_image_path
+//     }
+//     else return noImg
+// }
     return (
         <div className="fullScreen">
             <div className="GrowInfoCard">
@@ -31,10 +38,11 @@ const GrowInfo = ({ name, companionPlants, watering, zones, season }) => {
                     <img
                         className="growImg"
                         src={growItem.main_image_path}
+                        
                     />
                 </div>
                 <h1>{plantName}</h1>
-                <h1>{growItem.name}</h1>
+                {/* <h1>{growItem.name}</h1> */}
                 <h3>Botanical Name:</h3>
                 <p>{growItem.binomial_name}</p>
                 <h3>Description:</h3>
