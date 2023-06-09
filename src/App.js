@@ -8,40 +8,37 @@ import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
 
 function App() {
+  
   return (
     <div className="App">
+      <Router>
+        
       <header className="App-header">
         <h1> Community Garden</h1>
       </header>
-
-    <GeneralCarousel />
+      <GeneralCarousel />
     <br />
     <hr />
     <hr />
+     
    
-
-
-    
+   
       <div>
         <Forum />
       </div>
-   
-
-
-   
-   
-    <Router>
+      <SeasonInfo season="Spring" />
       <Routes>
-        
+      
         <Route path = '/seasoninfo' element = {<SeasonInfo season='Summer'/>} />
         <Route path = '/growinfo' element = {<GrowInfo />} />
-      </Routes>  
+      </Routes>   
 
-      <SeasonInfo season="Spring" />
-    </Router>
+      
+    </Router> 
 
     </div>
   );
+  
 }
 
 // --Floating Nav Bar starts here!--
