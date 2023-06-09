@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useNavigate , Link } from 'react-router-dom'
 
-const GrowInfo = ({ name, companionPlants, watering, zones }) => {
+const GrowInfo = ({ name, companionPlants, watering, zones, season }) => {
 
     const location = useLocation()
     const { plantName, companion, water, zone } = location.state
     const [growItem, setGrowItem] = useState([])
     const [item, setItem] = useState({})
+    console.log(season)
     const fetchItemData = async (name) => {
 
         const url = `https://openfarm.cc/api/v1/crops/?filter=${plantName}`
@@ -45,7 +47,7 @@ const GrowInfo = ({ name, companionPlants, watering, zones }) => {
                 <p>{water}</p>
                 <h3>Companion Plants:</h3>
                 <p>{companion}</p>
-                <div className="exit"><i className='bx bx-x'></i></div>
+                <div className="exit"><Link to ='/seasoninfo' state={{season:season}}><i className='bx bx-x'></i></Link></div>
 
 
 

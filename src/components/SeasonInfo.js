@@ -1,8 +1,33 @@
 import { useEffect, useState } from 'react'
 import { useNavigate , Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
 import GrowInfo from './GrowInfo'
 
+import FallFruits from "../images/FallFruits.jpeg";
+import SpringFruits from "../images/SpringFruits.jpeg";
+import WinterFruits from "../images/WinterFruits.jpeg";
+import SummerFruits from "../images/SummerFruits.jpeg";
+
+
+
 const SeasonInfo = ( {season} ) =>{
+
+    const choosePic = (season) => {
+        switch (season){
+            case 'Fall':
+                return FallFruits
+                break
+            case 'Spring':
+                return SpringFruits
+                break
+            case 'Winter':
+                return WinterFruits
+                break
+            case 'Summer':
+                return SummerFruits
+                break
+        }
+    }
 
     const [ veggies , setVeggies ] = useState([])
 
@@ -33,29 +58,28 @@ console.log(season)
 
 console.log(veggies)
 
-    const goToEd = (item) =>{
-        console.log(`clicked new`)
-        console.log(item)
-        return 
-    }
+  console.log(choosePic(season))
 
     return(
         <div className="SeasonInfo">
             
-            <div className="seasonSide">
-                <h1>What to Grow in the {season}</h1>
-                <ul>
-                    {veggies.map((data)=>{
-                        return(
-                            <li  key = {data.id}><Link to ='/growinfo' state = {{plantName:data.name, companion:data.companion, water:data.water, zone:data.zone}}>{data.name} </Link></li>
-                        )
-                    })}
-                </ul>
-            </div>
-            <div className="edSide">
-                
+                {/* <div className="SI_imgBox"> */}
+                    <img src={`${choosePic(season)}`}/>
+                {/* </div> */}
+                <div className="seasonContent">
+                    <h1>What to Grow in the {season}</h1>
+                    <ul>
+                        {veggies.map((data)=>{
+                            return(
+                                <li  key = {data.id}><Link to ='/growinfo' state = {{plantName:data.name, companion:data.companion, water:data.water, zone:data.zone, season:season}}>{data.name} </Link></li>
+                            )
+                        })}
+                    </ul>
+                    <div className="exit"><Link to ='/seasoninfo' state={{season:season}}><i className='bx bx-x'></i></Link></div>
             </div>
         </div>
+           
+       
     )
 }
 export default SeasonInfo
