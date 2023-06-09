@@ -1,14 +1,16 @@
 
 import './App.css';
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom"
+import { useEffect, useState } from 'react'
+
 import Forum from './components/Forum';
 import GeneralCarousel from './components/GeneralCarousel';
-
 import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
 
 function App() {
-  
+
+
   return (
     <div className="App">
       <Router>
@@ -28,7 +30,7 @@ function App() {
       </div>
       <SeasonInfo season="Spring" />
       <Routes>
-      
+        
         <Route path = '/seasoninfo' element = {<SeasonInfo season='Summer'/>} />
         <Route path = '/growinfo' element = {<GrowInfo />} />
       </Routes>   

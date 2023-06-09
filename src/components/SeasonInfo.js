@@ -12,6 +12,14 @@ import SummerFruits from "../images/SummerFruits.jpeg";
 
 const SeasonInfo = ( {season} ) =>{
 
+    const [ showHideSeasonInfo, setShowHideSeasonInfo ] = useState(true) 
+  
+    const hideSeasonInfo = () => {
+        console.log('clicked to hide component')
+        setShowHideSeasonInfo(false)
+    }
+    
+
     const choosePic = (season) => {
         switch (season){
             case 'Fall':
@@ -59,7 +67,9 @@ console.log(season)
 console.log(veggies)
 
   console.log(choosePic(season))
-
+  if (!showHideSeasonInfo){
+    return null
+}
     return(
         <div className="SeasonInfo">
             
@@ -75,7 +85,7 @@ console.log(veggies)
                             )
                         })}
                     </ul>
-                    <div className="exit"><Link to ='/seasoninfo' state={{season:season}}><i className='bx bx-x'></i></Link></div>
+                    <div onClick={hideSeasonInfo} className="exit"><i className='bx bx-x'></i></div>
             </div>
         </div>
            
