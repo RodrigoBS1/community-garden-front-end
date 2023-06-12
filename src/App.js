@@ -31,9 +31,9 @@ function App() {
       </div>
       {/* <SeasonInfo season="Spring" /> */}
       <Routes>
-        
+        <Route path = '/' element ></Route>
         <Route path = '/seasoninfo/:season' element = {<SeasonInfo />} />
-        <Route path = '/growinfo' element = {<GrowInfo />} />
+        <Route path = '/growinfo/:season' element = {<GrowInfo />} />
       </Routes>   
 
       
