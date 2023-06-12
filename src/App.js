@@ -13,7 +13,7 @@ import Articles from './components/Article';
 import Navbar from './components/NavBar';
 
 import Login from './components/Login'
-import Start from './components/Start'
+
 import SignUp from './components/SignUp'
 
 
@@ -28,25 +28,25 @@ function App() {
       <Router>
         
 
-      <Statements />
-      <GeneralCarousel />
-    <br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <header className="App-header">
+          <h1> Community Garden</h1>  
+        
+        </header>
+        <Routes>
+          <Route path = '/' element = {<GeneralCarousel />} />
+          <Route path = '/signup' element = {<SignUp />} />
+          <Route path = '/login' element = {<Login />} />
+          <Route path = '/seasoninfo/:season' element = {<SeasonInfo />} />
+          <Route path = '/growinfo/:season' element = {<GrowInfo />} />
+        </Routes> 
+        
    
    
 
-      <header className="App-header">
-        <h1> Community Garden</h1>  
-      
-      </header>
-      <Routes>
-        <Route path = '/' element = {<GeneralCarousel />} />
-        <Route path = '/signup' element = {<SignUp />} />
-        <Route path = '/login' element = {<Login />} />
-        <Route path = '/seasoninfo/:season' element = {<SeasonInfo />} />
-        <Route path = '/growinfo/:season' element = {<GrowInfo />} />
-      </Routes> 
-      <Start />
+
+      <Statements />
+      <GeneralCarousel />
+
      
 
      
@@ -57,12 +57,8 @@ function App() {
         <Forum />
      
 
-      {/* <SeasonInfo season="Spring" /> */}
-      <Routes>
-        <Route path = '/login' element = {<Login />} />
-        <Route path = '/seasoninfo/:season' element = {<SeasonInfo />} />
-        <Route path = '/growinfo/:season' element = {<GrowInfo />} />
-      </Routes>   
+   
+      
 
       
     </Router> 
@@ -78,9 +74,14 @@ function App() {
 
     <Articles />
 
+
     </div>
   );
   
 }
+
+
+
+
 
 export default App;
