@@ -7,6 +7,8 @@ import Forum from './components/Forum';
 import GeneralCarousel from './components/GeneralCarousel';
 import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
+import Articles from './components/Article';
+import Navbar from './components/NavBar';
 
 function App() {
 
@@ -24,6 +26,7 @@ function App() {
     <hr />
     <hr />
      
+     <Navbar />
    
    
       <div>
@@ -38,6 +41,8 @@ function App() {
 
       
     </Router> 
+
+    <Articles />
 
     </div>
   );

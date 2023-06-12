@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
-
 const Forum = () => {
   const [articles, setArticles] = useState([]);
   const [newComment, setNewComment] = useState('');
@@ -12,12 +11,13 @@ const Forum = () => {
       try {
         const response = await fetch('http://localhost:3001/forum');
         const data = await response.json();
-        const articlesWithNumbers = data.map((article) => ({
+        const articlesWithComments = data.map((article) => ({
           ...article,
           likes: Number(article.likes),
           dislikes: Number(article.dislikes),
+          comment: article.comment || [], // Use the correct property name 'comment'
         }));
-        setArticles(articlesWithNumbers);
+        setArticles(articlesWithComments);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -81,14 +81,14 @@ const Forum = () => {
             comment: newComment,
           }),
         });
-  
+
         if (response.ok) {
           console.log('Comment saved successfully');
           const updatedArticles = articles.map((article) => {
             if (article.id === articleId) {
               return {
                 ...article,
-                comments: [...(article.comments || []), newComment],
+                comment: [...(article.comment || []), newComment],
               };
             }
             return article;
@@ -104,8 +104,6 @@ const Forum = () => {
       }
     }
   };
-  
-  
 
   return (
     <div className='forum-section'>
@@ -118,14 +116,14 @@ const Forum = () => {
             <button onClick={() => handleLike(article.id)}>Like ({article.likes})</button>
             <button onClick={() => handleDislike(article.id)}>Dislike ({article.dislikes})</button>
             <h4>Comments</h4>
-            {article.comments && article.comments.length === 0 ? (
-              <p>No comments available.</p>
-            ) : (
+            {article.comment && article.comment.length > 0 ? (
               <ul>
-                {article.comments && article.comments.map((comment, index) => (
+                {article.comment.map((comment, index) => (
                   <li key={index}>{comment}</li>
                 ))}
               </ul>
+            ) : (
+              <p>No comments yet.</p>
             )}
             <form className='comment-form' onSubmit={(event) => handleNewCommentSubmit(event, article.id)}>
               <input
