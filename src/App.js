@@ -16,7 +16,8 @@ function App() {
       <Router>
         
       <header className="App-header">
-        <h1> Community Garden</h1>
+        <h1> Community Garden</h1>  
+      
       </header>
       <GeneralCarousel />
     <br />

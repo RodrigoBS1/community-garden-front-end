@@ -187,13 +187,15 @@
 /* General Carousel starts here */
 
 .MainCar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  margin-top:100px;
- 
-
-
+  margin-top: 100px;
+  margin-left: -6rem;
 }
+
 
 .carousel1 {
   width: 100%;
@@ -247,6 +249,23 @@
   border-radius: 10%;
   width: 200px;
   height: 200px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* General Carousel ends here */

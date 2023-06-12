@@ -1,93 +1,60 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import FallFruits from '../images/FallFruits.jpeg';
-import SpringFruits from '../images/SpringFruits.jpeg';
-import WinterFruits from '../images/WinterFruits.jpeg';
-import SummerFruits from '../images/SummerFruits.jpeg';
-import GardenArticle from '../images/GardenArticle.jpeg';
-// import GardeningForum from '../images/GardeningForum.jpeg';
+import FallCrop2 from '../images/FallCrop2.jpeg';
+import SpringCrop2 from '../images/SpringCrop2.jpeg';
+import WinterCrop2 from '../images/WinterCrop2.jpeg';
+import SummerCrop2 from '../images/SummerCrop2.jpeg';
+
 function GeneralCarousel() {
- const [index, setIndex] = useState(0);
- let season
-//  const findSeason = (index) => {
-//   console.log(imgCards[mod(index, imgCards.length)].season)
-//   return imgCards[mod(index, imgCards.length)].season;
-//  };
- const imgCards = [
-  { id: '1', image: FallFruits, season: 'Fall' },
-  { id: '2', image: WinterFruits, season: 'Winter' },
-  { id: '3', image: SummerFruits, season: 'Summer' },
-  { id: '4', image: SpringFruits, season: 'Spring' },
-  { id: '5', image: GardenArticle, season: 'Garden' },
-  // { id: '6', image: GardeningForum },
- ];
- const mod = (n, m) => {
-  let result = n % m;
-  // Return a positive value
-  return result >= 0 ? result : result + m;
- };
- useEffect(() => {
-  const timeoutId = setTimeout(() => {
-   setIndex((prevIndex) => (prevIndex + 1) % imgCards.length);
-  }, 3000);
-  return () => clearTimeout(timeoutId); // Clean up the timer on component unmount
- }, [index,imgCards.length]);
- return (
-  <div className='MainCar'>
-   <div className='carousel1'>
-    {imgCards.map((item, i) => {
-     const indexLeft = mod(index - 1, imgCards.length);
-     const indexRight = mod(index + 1, imgCards.length);
-     let className = '';
-     if (i === index) {
-      className = 'Gencard Gencard--active';
-      season = imgCards[i].season
-      console.log(season)
-     } else if (i === indexRight) {
-      className = 'Gencard Gencard--right';
-     } else if (i === indexLeft) {
-      className = 'Gencard Gencard--left';
-     } else {
-      className = 'Gencard';
-     }
-     return (
-      // <Link
-      //   to = '/seasoninfo' state = {{ season: season} }
-      //  key={item.id}
-      // >
-      //  <img className={className} src={item.image} alt={item.season} />
-      // </Link>
-       <Link  
-        to = {`/seasoninfo/${season}`}
-       
-      >
-       <img key={item.id} className={className} src={item.image} alt={item.season} />
-      </Link>
-     );
-    })}
-   </div>
-  </div>
- );
+  const [index, setIndex] = useState(0);
+  const imgCards = [
+    { id: '1', image: FallCrop2, season: 'Fall', },
+    { id: '2', image: WinterCrop2, season: 'Winter', },
+    { id: '3', image: SummerCrop2, season: 'Summer', },
+    { id: '4', image: SpringCrop2, season: 'Spring', },
+  ];
+
+  const mod = (n, m) => {
+    let result = n % m;
+    // Return a positive value
+    return result >= 0 ? result : result + m;
+  };
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % imgCards.length);
+    }, 3000);
+    return () => clearTimeout(timeoutId); // Clean up the timer on component unmount
+  }, [index, imgCards.length]);
+
+  return (
+    <div className='MainCar'>
+      <div className='carousel1'>
+        {imgCards.map((item, i) => {
+          const indexLeft = mod(index - 1, imgCards.length);
+          const indexRight = mod(index + 1, imgCards.length);
+          let className = '';
+          if (i === index) {
+            className = 'Gencard Gencard--active';
+          } else if (i === indexRight) {
+            className = 'Gencard Gencard--right';
+          } else if (i === indexLeft) {
+            className = 'Gencard Gencard--left';
+          } else {
+            className = 'Gencard';
+          }
+          return (
+            <Link to={`/seasoninfo/${item.season}`} key={item.id}>
+              <div className="image-container">
+                <img className={className} src={item.image} alt={item.season} />
+                <div className="image-text">{item.text}</div>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
+
 export default GeneralCarousel;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
