@@ -7,9 +7,14 @@ import Forum from './components/Forum';
 import GeneralCarousel from './components/GeneralCarousel';
 import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
+
+import Articles from './components/Article';
+import Navbar from './components/NavBar';
+
 import Login from './components/Login'
 import Start from './components/Start'
 import SignUp from './components/SignUp'
+
 
 function App() {
 
@@ -33,6 +38,7 @@ function App() {
      
 
      
+     <Navbar />
    
    
      
@@ -47,6 +53,8 @@ function App() {
 
       
     </Router> 
+
+    <Articles />
 
     </div>
   );
