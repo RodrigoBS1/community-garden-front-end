@@ -7,28 +7,24 @@ import Forum from './components/Forum';
 import GeneralCarousel from './components/GeneralCarousel';
 import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
+import Statements from "./components/Statements";
 
 function App() {
 
 
   return (
+
     <div className="App">
+
+
       <Router>
         
-      <header className="App-header">
-        <h1> Community Garden</h1>  
-      
-      </header>
+      <Statements />
       <GeneralCarousel />
     <br />
-    <hr />
-    <hr />
-     
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
    
    
-      <div>
-        <Forum />
-      </div>
       {/* <SeasonInfo season="Spring" /> */}
       <Routes>
         
@@ -38,22 +34,17 @@ function App() {
 
       
     </Router> 
+      <div>
+        <Forum />
+      </div>
 
+      <footer className="App-footer">
+        <h1> Footer</h1>  
+      </footer>
+     
     </div>
   );
   
 }
-
-// --Floating Nav Bar starts here!--
-
-// --Floating Nav Bar ends here!--
-
-// --Education sections starts here!--
-
-// --Education sections ends here!--
-
-// --Forum sections starts here!--
-
-// --Forum sections ends here!--
 
 export default App;
