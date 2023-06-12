@@ -9,6 +9,7 @@ import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
 import Login from './components/Login'
 import Start from './components/Start'
+import SignUp from './components/SignUp'
 
 function App() {
 
@@ -22,21 +23,21 @@ function App() {
       
       </header>
       <Routes>
+        <Route path = '/' element = {<GeneralCarousel />} />
+        <Route path = '/signup' element = {<SignUp />} />
         <Route path = '/login' element = {<Login />} />
         <Route path = '/seasoninfo/:season' element = {<SeasonInfo />} />
         <Route path = '/growinfo/:season' element = {<GrowInfo />} />
       </Routes> 
       <Start />
-      <GeneralCarousel />
-    <br />
-    <hr />
-    <hr />
+     
+
      
    
    
-      <div>
+     
         <Forum />
-      </div>
+     
       {/* <SeasonInfo season="Spring" /> */}
       <Routes>
         <Route path = '/login' element = {<Login />} />
