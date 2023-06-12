@@ -13,8 +13,8 @@ import SummerFruits from "../images/SummerFruits.jpeg";
 
 const SeasonInfo = ( ) =>{
 
-    const [ showHideSeasonInfo, setShowHideSeasonInfo ] = useState(true) 
-  
+    let [ showHideSeasonInfo, setShowHideSeasonInfo ] = useState(true) 
+    
     const hideSeasonInfo = () => {
         console.log('clicked to hide component')
         setShowHideSeasonInfo(false)
@@ -64,8 +64,11 @@ const SeasonInfo = ( ) =>{
     }
 
     useEffect(()=>{
+        setShowHideSeasonInfo(true)   
         fetchVeggieData(season)
-    },[])
+        
+        console.log('Test',showHideSeasonInfo)
+    },[season])
 console.log(season)
 
 console.log(veggies)
