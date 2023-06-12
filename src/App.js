@@ -7,8 +7,14 @@ import Forum from './components/Forum';
 import GeneralCarousel from './components/GeneralCarousel';
 import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
+
 import Articles from './components/Article';
 import Navbar from './components/NavBar';
+
+import Login from './components/Login'
+import Start from './components/Start'
+import SignUp from './components/SignUp'
+
 
 function App() {
 
@@ -21,20 +27,26 @@ function App() {
         <h1> Community Garden</h1>  
       
       </header>
-      <GeneralCarousel />
-    <br />
-    <hr />
-    <hr />
+      <Routes>
+        <Route path = '/' element = {<GeneralCarousel />} />
+        <Route path = '/signup' element = {<SignUp />} />
+        <Route path = '/login' element = {<Login />} />
+        <Route path = '/seasoninfo/:season' element = {<SeasonInfo />} />
+        <Route path = '/growinfo/:season' element = {<GrowInfo />} />
+      </Routes> 
+      <Start />
+     
+
      
      <Navbar />
    
    
-      <div>
+     
         <Forum />
-      </div>
+     
       {/* <SeasonInfo season="Spring" /> */}
       <Routes>
-        <Route path = '/' element ></Route>
+        <Route path = '/login' element = {<Login />} />
         <Route path = '/seasoninfo/:season' element = {<SeasonInfo />} />
         <Route path = '/growinfo/:season' element = {<GrowInfo />} />
       </Routes>   
