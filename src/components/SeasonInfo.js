@@ -13,8 +13,8 @@ import SummerFruits from "../images/SummerFruits.jpeg";
 
 const SeasonInfo = ( ) =>{
 
-    const [ showHideSeasonInfo, setShowHideSeasonInfo ] = useState(true) 
-  
+    let [ showHideSeasonInfo, setShowHideSeasonInfo ] = useState(true) 
+    
     const hideSeasonInfo = () => {
         console.log('clicked to hide component')
         setShowHideSeasonInfo(false)
@@ -64,8 +64,11 @@ const SeasonInfo = ( ) =>{
     }
 
     useEffect(()=>{
+        setShowHideSeasonInfo(true)   
         fetchVeggieData(season)
-    },[])
+        
+        console.log('Test',showHideSeasonInfo)
+    },[season])
 console.log(season)
 
 console.log(veggies)
@@ -85,7 +88,7 @@ console.log(veggies)
                     <ul>
                         {veggies.map((data)=>{
                             return(
-                                <li  key = {data.id}><Link to ='/growinfo' state = {{plantName:data.name, companion:data.companion, water:data.water, zone:data.zone, season:season}}>{data.name} </Link></li>
+                                <li  key = {data.id}><Link to ={`/growinfo/${season}`} state = {{plantName:data.name, companion:data.companion, water:data.water, zone:data.zone, seasons:season}}>{data.name} </Link></li>
                             )
                         })}
                     </ul>
