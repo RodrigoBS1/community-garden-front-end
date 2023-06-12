@@ -29,6 +29,7 @@ function GeneralCarousel() {
 
   return (
     <div className='MainCar'>
+    
       <div className='carousel1'>
         {imgCards.map((item, i) => {
           const indexLeft = mod(index - 1, imgCards.length);
@@ -52,6 +53,10 @@ function GeneralCarousel() {
             </Link>
           );
         })}
+      </div>
+      <div className="loginSignupBtnBox">
+            <Link to='/signup'><button>Sign Up</button></Link>
+            <Link to='/login'><button>Login</button></Link>
       </div>
     </div>
   );
