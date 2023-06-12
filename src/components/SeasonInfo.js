@@ -85,7 +85,7 @@ console.log(veggies)
                     <ul>
                         {veggies.map((data)=>{
                             return(
-                                <li  key = {data.id}><Link to ='/growinfo' state = {{plantName:data.name, companion:data.companion, water:data.water, zone:data.zone, season:season}}>{data.name} </Link></li>
+                                <li  key = {data.id}><Link to ={`/growinfo/${season}`} state = {{plantName:data.name, companion:data.companion, water:data.water, zone:data.zone, seasons:season}}>{data.name} </Link></li>
                             )
                         })}
                     </ul>
