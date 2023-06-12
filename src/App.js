@@ -27,11 +27,11 @@ function App() {
 
       <Router>
         
-
-        <header className="App-header">
+      <Navbar />
+        {/* <header className="App-header">
           <h1> Community Garden</h1>  
         
-        </header>
+        </header> */}
         <Routes>
           <Route path = '/' element = {<GeneralCarousel />} />
           <Route path = '/signup' element = {<SignUp />} />
@@ -40,39 +40,17 @@ function App() {
           <Route path = '/growinfo/:season' element = {<GrowInfo />} />
         </Routes> 
         
-   
-   
-
-
-      <Statements />
-      <GeneralCarousel />
-
-     
-
-     
-     <Navbar />
-   
-   
-     
+        <Statements />
+       
         <Forum />
-     
-
-   
-      
-
-      
-    </Router> 
-      <div>
-        <Forum />
-      </div>
-
-
-      <footer className="App-footer">
+        <Articles />
+      </Router> 
+       <footer className="App-footer">
         <h1> Footer</h1>  
       </footer>
      
 
-    <Articles />
+   
 
 
     </div>

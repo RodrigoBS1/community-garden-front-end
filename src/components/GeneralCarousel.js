@@ -54,12 +54,9 @@ function GeneralCarousel() {
           );
         })}
       </div>
-      <div className="loginSignupBtnBox">
-            <Link to='/signup'><button>Sign Up</button></Link>
-            <Link to='/login'><button>Login</button></Link>
       </div>
-    </div>
-  );
+   
+ )
 }
 
 export default GeneralCarousel;
