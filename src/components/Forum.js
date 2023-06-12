@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+
 
 const Forum = () => {
   const [articles, setArticles] = useState([]);
+  const [newComment, setNewComment] = useState('');
 
   useEffect(() => {
-    // Fetch articles from the external database
     const fetchData = async () => {
       try {
-        const response = await fetch('https://community-garden-api.onrender.com/forum');
+        const response = await fetch('http://localhost:3001/forum');
         const data = await response.json();
-
-        // Provide default values for likes and dislikes
-        const updatedArticles = data.map((article) => ({
+        const articlesWithNumbers = data.map((article) => ({
           ...article,
-          likes: article.likes || 0,
-          dislikes: article.dislikes || 0,
+          likes: Number(article.likes),
+          dislikes: Number(article.dislikes),
         }));
-
-        setArticles(updatedArticles);
+        setArticles(articlesWithNumbers);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -28,7 +26,7 @@ const Forum = () => {
     fetchData();
   }, []);
 
-  const handleLike = (articleId) => {
+  const handleLike = async (articleId) => {
     const updatedArticles = articles.map((article) => {
       if (article.id === articleId) {
         return {
@@ -39,9 +37,17 @@ const Forum = () => {
       return article;
     });
     setArticles(updatedArticles);
+
+    try {
+      await fetch(`http://localhost:3001/forum/${articleId}/like`, {
+        method: 'POST',
+      });
+    } catch (error) {
+      console.error('Error liking article:', error);
+    }
   };
 
-  const handleDislike = (articleId) => {
+  const handleDislike = async (articleId) => {
     const updatedArticles = articles.map((article) => {
       if (article.id === articleId) {
         return {
@@ -52,32 +58,61 @@ const Forum = () => {
       return article;
     });
     setArticles(updatedArticles);
-  };
 
-  const handleNewCommentSubmit = (event, articleId, newComment) => {
-    event.preventDefault();
-    if (newComment.trim() !== '') {
-      const updatedArticles = articles.map((article) => {
-        if (article.id === articleId) {
-          const comments = article.comments || []; // Handle undefined comments array
-          return {
-            ...article,
-            comments: [...comments, newComment],
-          };
-        }
-        return article;
+    try {
+      await fetch(`http://localhost:3001/forum/${articleId}/dislike`, {
+        method: 'POST',
       });
-      setArticles(updatedArticles);
+    } catch (error) {
+      console.error('Error disliking article:', error);
     }
   };
 
+  const handleNewCommentSubmit = async (event, articleId) => {
+    event.preventDefault();
+    if (newComment.trim() !== '') {
+      try {
+        const response = await fetch(`http://localhost:3001/forum/${articleId}/comment`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            comment: newComment,
+          }),
+        });
   
+        if (response.ok) {
+          console.log('Comment saved successfully');
+          const updatedArticles = articles.map((article) => {
+            if (article.id === articleId) {
+              return {
+                ...article,
+                comments: [...(article.comments || []), newComment],
+              };
+            }
+            return article;
+          });
+          console.log('Updated articles:', updatedArticles);
+          setArticles(updatedArticles);
+          setNewComment('');
+        } else {
+          console.error('Failed to save comment:', response.status, response.statusText);
+        }
+      } catch (error) {
+        console.error('Error saving comment:', error);
+      }
+    }
+  };
+  
+  
+
   return (
     <div className='forum-section'>
-      <h2>Forum Section</h2>
-      <Carousel>
+      <h1>Forum Section</h1>
+      <Carousel className='control-arrow'>
         {articles.map((article) => (
-          <div key={article.id}>
+          <div className='article-container' key={article.id}>
             <h3>{article.article}</h3>
             <p>{article.content}</p>
             <button onClick={() => handleLike(article.id)}>Like ({article.likes})</button>
@@ -86,19 +121,20 @@ const Forum = () => {
             {article.comments && article.comments.length === 0 ? (
               <p>No comments available.</p>
             ) : (
-              <p>
+              <ul>
                 {article.comments && article.comments.map((comment, index) => (
-                  <p key={index}>{comment}</p>
+                  <li key={index}>{comment}</li>
                 ))}
-              </p>
+              </ul>
             )}
-            <form className='comment-form' onSubmit={(event) => handleNewCommentSubmit(event, article.id, event.target.comment.value)}>
+            <form className='comment-form' onSubmit={(event) => handleNewCommentSubmit(event, article.id)}>
               <input
-                type="text"
-                placeholder="Write your comment..."
-                name="comment"
+                type='text'
+                placeholder='Write your comment...'
+                value={newComment}
+                onChange={(event) => setNewComment(event.target.value)}
               />
-              <button type="submit">Add Comment</button>
+              <button type='submit'>Add Comment</button>
             </form>
           </div>
         ))}
@@ -108,4 +144,3 @@ const Forum = () => {
 };
 
 export default Forum;
-

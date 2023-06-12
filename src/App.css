@@ -125,6 +125,20 @@
   padding: 2rem;
 }
 
+.article-container {
+  margin: 2rem ;
+}
+
+.carousel-status {
+  margin-right: 2rem;
+}
+
+.control-arrow {
+ background-color: rgba(22, 12, 83, 0.1);
+ color: black;
+
+}
+
 
 
 /* Forum style ends here */
