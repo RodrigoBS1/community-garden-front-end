@@ -7,6 +7,7 @@ import Forum from './components/Forum';
 import GeneralCarousel from './components/GeneralCarousel';
 import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
+import Statements from "./components/Statements";
 
 import Articles from './components/Article';
 import Navbar from './components/NavBar';
@@ -20,9 +21,20 @@ function App() {
 
 
   return (
+
     <div className="App">
+
+
       <Router>
         
+
+      <Statements />
+      <GeneralCarousel />
+    <br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+   
+   
+
       <header className="App-header">
         <h1> Community Garden</h1>  
       
@@ -44,6 +56,7 @@ function App() {
      
         <Forum />
      
+
       {/* <SeasonInfo season="Spring" /> */}
       <Routes>
         <Route path = '/login' element = {<Login />} />
@@ -53,6 +66,15 @@ function App() {
 
       
     </Router> 
+      <div>
+        <Forum />
+      </div>
+
+
+      <footer className="App-footer">
+        <h1> Footer</h1>  
+      </footer>
+     
 
     <Articles />
 
@@ -60,17 +82,5 @@ function App() {
   );
   
 }
-
-// --Floating Nav Bar starts here!--
-
-// --Floating Nav Bar ends here!--
-
-// --Education sections starts here!--
-
-// --Education sections ends here!--
-
-// --Forum sections starts here!--
-
-// --Forum sections ends here!--
 
 export default App;

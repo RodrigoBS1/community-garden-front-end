@@ -8,6 +8,14 @@
   height: 40vmin;
   pointer-events: none;
 }
+.LogoIMG {
+  width: 200px;
+  height: 300px;
+}
+.LOGO {
+  width: 1800px;
+  height: 300px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -15,20 +23,24 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 20vh;
+.App-footer {
+  background-color: #293d37;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc 10px;
   color: white;
   margin-bottom:50px;
 }
 
 .App-link {
   color: #61dafb;
+
+  /* HTML page logo */
+
+
 }
 
 @keyframes App-logo-spin {
