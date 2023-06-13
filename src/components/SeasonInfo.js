@@ -18,28 +18,29 @@ const SeasonInfo = ( ) =>{
     const hideSeasonInfo = () => {
         console.log('clicked to hide component')
         setShowHideSeasonInfo(false)
+        navigate(`/`)
     }
     let { season } = useParams()
     console.log(season)
     console.log(showHideSeasonInfo)
     console.log(season)
     
-    const choosePic = (season) => {
-        switch (season){
-            case 'Fall':
-                return FallFruits
-                break
-            case 'Spring':
-                return SpringFruits
-                break
-            case 'Winter':
-                return WinterFruits
-                break
-            case 'Summer':
-                return SummerFruits
-                break
-        }
-    }
+    // const choosePic = (season) => {
+    //     switch (season){
+    //         case 'Fall':
+    //             return FallFruits
+    //             break
+    //         case 'Spring':
+    //             return SpringFruits
+    //             break
+    //         case 'Winter':
+    //             return WinterFruits
+    //             break
+    //         case 'Summer':
+    //             return SummerFruits
+    //             break
+    //     }
+    // }
 
     const [ veggies , setVeggies ] = useState([])
 
@@ -73,7 +74,7 @@ console.log(season)
 
 console.log(veggies)
 
-  console.log(choosePic(season))
+//   console.log(choosePic(season))
   if (!showHideSeasonInfo){
     return null
 }
@@ -81,11 +82,11 @@ console.log(veggies)
         <div className="SeasonInfo">
             
                 {/* <div className="SI_imgBox"> */}
-                    <img src={`${choosePic(season)}`}/>
+                    {/* <img src={`${choosePic(season)}`}/> */}
                 {/* </div> */}
                 <div className="seasonContent">
                     <h1>What to Grow in the {season}</h1>
-                    <ul>
+                    <ul className="veggieList">
                         {veggies.map((data)=>{
                             return(
                                 <li  key = {data.id}><Link to ={`/growinfo/${season}`} state = {{plantName:data.name, companion:data.companion, water:data.water, zone:data.zone, seasons:season}}>{data.name} </Link></li>

@@ -20,6 +20,7 @@ import SignUp from "./components/SignUp";
 function App() {
   return (
     <div className="App">
+      
       <nav className="sticky">
         <Navbar />
       </nav>
@@ -36,10 +37,8 @@ function App() {
           <Route path='/growinfo/:season' element={<GrowInfo />} />
         </Routes>
 
-
-       
-        {/* <Forum />
-        <Articles /> */}
+        {/* <Forum /> */}
+        {/* <Articles /> */}
         <Footer />
 
 
