@@ -1,9 +1,15 @@
 import "./App.css";
-import { NavLink, Route, Routes } from "react-router-dom";
-// import { useEffect, useState } from "react";
 
-import Forum from "./components/Forum";
-import GeneralCarousel from "./components/GeneralCarousel";
+
+import './App.css';
+import { Navlink, Route, Routes, BrowserRouter as Router } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import Forum from './components/Forum';
+import GeneralCarousel from './components/GeneralCarousel';
+
+
 import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
 import Statements from "./components/Statements";

@@ -301,7 +301,7 @@
 
 /* General Carousel ends here */
 
-/* Login Container starts here */
+/* Login starts here */
 .loginContainer{
   background-color:white;
   width:100%;
@@ -311,6 +311,26 @@
   top:0;
   z-index:1001;
 }
+
+/* Login ends here */
+
+/* Signup  starts here */
+.signupContainer{
+  background-color:white;
+  width:100%;
+  height:100%;
+  position:absolute;
+  
+  top:400px;
+  z-index:1001;
+
+
+}
+.signupForm{
+margin-top:10%;
+}
+/* Signup ends here */
+
 /* Login Container ends here */
 
 /* Mission start here */
@@ -322,3 +342,4 @@
 
 
 /* Mission ends here */
+
