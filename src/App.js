@@ -1,6 +1,8 @@
 import "./App.css";
-import { NavLink, Route, Routes } from "react-router-dom";
-// import { useEffect, useState } from "react";
+import { Navlink, Route, Routes, BrowserRouter as Router } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 // import Forum from "./components/Forum";
 import GeneralCarousel from "./components/GeneralCarousel";
@@ -14,21 +16,17 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 
 
+
 function App() {
   return (
     <div className="App">
-      <nav>
+      <nav className="sticky">
         <Navbar />
       </nav>
 
       <div className="mission">
         <Statements />
       </div>
-
-
-      
-
-       
 
         <Routes>
           <Route path='/' element={<GeneralCarousel />} />
@@ -38,12 +36,12 @@ function App() {
           <Route path='/growinfo/:season' element={<GrowInfo />} />
         </Routes>
 
+
        
         {/* <Forum />
         <Articles /> */}
         <Footer />
-      
-      
+
 
     </div>
   );

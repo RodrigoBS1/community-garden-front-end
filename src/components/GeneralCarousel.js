@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import FallCrop2 from '../images/FallCrop2.jpeg';
 import SpringCrop2 from '../images/SpringCrop2.jpeg';
 import WinterCrop2 from '../images/WinterCrop2.jpeg';
