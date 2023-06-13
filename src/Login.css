@@ -1,0 +1,22 @@
+
+.inputLogin {
+    background-color: #E1D4BB;
+    border: none;
+    padding: 5px;
+    width: 60%; /* Adjust the width as needed */
+  }
+
+.loginForm {
+    display: grid;
+    gap: 10px;
+    width: 70%;
+    height: auto;
+    background-color: #EEEEEE;
+    padding: 2rem;
+    text-align: right;
+    margin-left: 30rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    
+}

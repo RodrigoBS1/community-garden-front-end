@@ -14,7 +14,12 @@ import Footer from './components/Footer';
 import Navbar from "./components/NavBar";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+
 import About from "./components/About";
+
+import LocalGardens from './components/LocalGardens'
+
+
 
 
 function App() {
@@ -35,7 +40,11 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/seasoninfo/:season' element={<SeasonInfo />} />
           <Route path='/growinfo/:season' element={<GrowInfo />} />
+
           <Route path='/about' element={<About />} />
+
+          <Route path='/localgardens/:city' element={<LocalGardens />} />
+
         </Routes>
 
         {/* <Forum /> */}
