@@ -15,7 +15,7 @@ import SignUp from "./components/SignUp";
 function App() {
   return (
     <div className="App">
-      <nav>
+      <nav className="sticky">
         <Navbar />
       </nav>
 
