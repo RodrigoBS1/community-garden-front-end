@@ -28,14 +28,14 @@
     align-self: center;
   }
   
-  input[type="text"] {
+  .inputSignup {
     background-color: #E1D4BB;
     border: none;
     padding: 5px;
     width: 50%; /* Adjust the width as needed */
   }
   
-  button {
+  .buttonGarden {
     background-color: #6ECCAF;
     color: #ADE792;
     border: none;
@@ -48,12 +48,12 @@
 
   }
   
-  button:hover {
+  .buttonGarden:hover {
     background-color: #ADE792;
     color: #344D67;
   }
 
-  .button {
+  .buttonSubmitGarden {
     text-align: center;
     margin: 2rem;
   }
