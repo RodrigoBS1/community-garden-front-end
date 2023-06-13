@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "../Navbar.css";
+
+
 function NavBar() {
   const [active, setActive] = useState("nav__menu");
   const [icon, setIcon] = useState("nav__toggler");
@@ -15,11 +17,11 @@ function NavBar() {
   return (
     <nav className="nav sticky">
       <a href="#" className="nav__brand">
-        we can put the logo here<img src="./" alt="" />
+      <img src="./" alt="" />
       </a>
       <ul className={active}>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <a href="#home" className="nav__link">
             Home
           </a>
         </li>
@@ -34,12 +36,12 @@ function NavBar() {
           </a>
         </li> */}
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <a href='SignUp' className="nav__link">
             Sign Up
           </a>
         </li>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <a href='Login' className="nav__link">
             Log In
           </a>
         </li>

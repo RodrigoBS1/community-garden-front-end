@@ -10,7 +10,7 @@ const Forum = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3001/forum');
+        const response = await fetch('https://community-garden-api.onrender.com/forum');
         const data = await response.json();
         setArticles(data);
       } catch (error) {
@@ -34,7 +34,7 @@ const Forum = () => {
     setArticles(updatedArticles);
 
     try {
-      await fetch(`http://localhost:3001/forum/${articleId}/like`, {
+      await fetch(`https://community-garden-api.onrender.com/forum/${articleId}/like`, {
         method: 'POST',
       });
     } catch (error) {
@@ -55,7 +55,7 @@ const Forum = () => {
     setArticles(updatedArticles);
 
     try {
-      await fetch(`http://localhost:3001/forum/${articleId}/dislike`, {
+      await fetch(`https://community-garden-api.onrender.com/forum/${articleId}/dislike`, {
         method: 'POST',
       });
     } catch (error) {
@@ -67,7 +67,7 @@ const Forum = () => {
     event.preventDefault();
     if (newComment.trim() !== '') {
       try {
-        const response = await fetch(`http://localhost:3001/forum/${articleId}/comment`, {
+        const response = await fetch(`https://community-garden-api.onrender.com/forum/${articleId}/comment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -106,8 +106,8 @@ const Forum = () => {
       <Carousel className='control-arrow'>
         {articles.map((article) => (
           <div className='article-container' key={article.id}>
-            <h3>{article.article}</h3>
-            <p>{article.content}</p>
+            <h2>{article.article}</h2><br />
+            <p>{article.content}</p><br />
             <button onClick={() => handleLike(article.id)}>Like ({article.likes})</button>
             <button onClick={() => handleDislike(article.id)}>Dislike ({article.dislikes})</button>
             <h4>Comments</h4>
