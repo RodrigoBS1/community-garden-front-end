@@ -7,22 +7,15 @@ import GeneralCarousel from "./components/GeneralCarousel";
 import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
 import Statements from "./components/Statements";
-
-
 import Articles from './components/Article';
 import Navbar from './components/NavBar';
-
 import Login from './components/Login'
-
 import SignUp from './components/SignUp'
-
 import Footer from './components/Footer';
 
 
-import Articles from "./components/Article";
-import Navbar from "./components/NavBar";
-import Login from "./components/Login";
-import SignUp from "./components/SignUp";
+
+
 
 
 function App() {
@@ -35,12 +28,6 @@ function App() {
       <div className="mission">
         <Statements />
       </div>
-
-
-      <Router>
-
-        <Navbar />
-
         <Routes>
           <Route path='/' element={<GeneralCarousel />} />
           <Route path='/signup' element={<SignUp />} />
@@ -49,13 +36,9 @@ function App() {
           <Route path='/growinfo/:season' element={<GrowInfo />} />
         </Routes>
 
-        <Statements />
         <Forum />
         <Articles />
         <Footer />
-      </Router>
-      
-
     </div>
   );
 
