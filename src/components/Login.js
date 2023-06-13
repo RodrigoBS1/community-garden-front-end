@@ -31,7 +31,7 @@ const Login = () => {
     <div className="loginContainer">
         <NavBar />
       <form className="loginForm" onSubmit={handleSubmit}>
-        <label for="userName">Username</label>
+        <label htmlFor="userName">Username</label>
         <input
           className="inputLogin"
           onChange={handleChange}
@@ -40,7 +40,7 @@ const Login = () => {
           name="userName"
           placeholder="Username"
         />
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input
           className="inputLogin"
           onChange={handleChange}
