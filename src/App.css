@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
@@ -8,13 +8,18 @@
   height: 40vmin;
   pointer-events: none;
 }
+
 .LogoIMG {
-  width: 200px;
-  height: 300px;
+  width: 100%;
+  height: auto;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
+
 .LOGO {
-  width: 1800px;
-  height: 300px;
+  width: 95%;
+  height: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -27,12 +32,12 @@
   background-color: #293d37;
   min-height: 10vh;
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   font-size: calc 10px;
   color: white;
-  margin-bottom:50px;
+  margin-bottom: 50px;
   /* padding: auto; */
 }
 
@@ -49,139 +54,150 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 
- /* START CSS for SeasonInfo Component */
-.SeasonInfo{
-  display:flex;
-  flex-direction:column;
+/* START CSS for SeasonInfo Component */
+.SeasonInfo {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  position:relative;
+  position: relative;
   /* background-color:black; */
-  width:50%;
-  height:900px;
+  width: 50%;
+  height: 900px;
   background-size: cover;
-  font-size:1.7rem;
-  margin-right:auto;
-  margin-left:auto;
-  margin-bottom:20px;
-  border-radius:15px;
-  
+  font-size: 1.7rem;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  border-radius: 15px;
+
 }
-.SeasonInfo ul li{
+
+.SeasonInfo ul li {
   list-style-type: none;
 }
-.SI_imgBox{
-  width:100%;
-  height:100%;
+
+.SI_imgBox {
+  width: 100%;
+  height: 100%;
 }
-.SeasonInfo img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  position:relative;
+
+.SeasonInfo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
 }
-.seasonContent{
-  position:absolute;
-  top:0;
-  left:0;
-  background-color: rgba(0,0,0,0.5);
-  width:100%;
-  height:100%;
-  color:white;
+
+.seasonContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  color: white;
   font-weight: 600;
   line-height: 33px;
-  overflow:scroll;
-}
-.seasonContent h1{
-  margin-top:30px;
-  margin-bottom:20px;
-}
-.seasonContent a{
-  color:white;
-  font-size:2.2rem;
-  width:100%;
-  height:100%;
-}
-.veggieList{
-  display:flex;
-  flex-direction:column;
-  flex-wrap:wrap;
+  overflow: scroll;
 }
 
+.seasonContent h1 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
 
-.seasonContent .exit i{
- font-size:40px;
- color:black;
- background-color:white;
- 
+.seasonContent a {
+  color: white;
+  font-size: 2.2rem;
+  width: 100%;
+  height: 100%;
+}
+
+.veggieList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 
+.seasonContent .exit i {
+  font-size: 40px;
+  color: black;
+  background-color: white;
 
- /* END CSS for SeasonInfo Component  */
+}
 
- /* START CSS for GrowInfo Component */
 
- .fullScreen{
-  width:100%;
-  height:100%;
-  background-color:white;
-  margin-bottom:20px;
- }
- .GrowInfoCard{
-  position:relative;
-  width:40%;
-  height:auto;
-  border:black solid 5px;
-  display:flex;
-  flex-direction:column;
-  margin-right:auto;
-  margin-left:auto;
-  padding:10px;
 
-  
+/* END CSS for SeasonInfo Component  */
 
- }
+/* START CSS for GrowInfo Component */
 
- .growImgBox{
-  width:95%;
+.fullScreen {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.GrowInfoCard {
+  position: relative;
+  width: 40%;
   height: auto;
-  border:black solid 5px;
-  margin-right:auto;
-  margin-left:auto;
-  margin-top:15px;
-  border-radius:15px;
-  
+  border: black solid 5px;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
 
- }
 
- .growImg{
-  width:100%;
-  height:100%;
-  object-fit:cover;
- }
 
- .exit{
-  width:auto;
-  height:auto;
-  position:absolute;
-  right:10px;
-  bottom:20px;
-  background-color:black;
-  border-radius:10px;
+}
 
- }
- .exit i{
-  font-size:40px;
-  color:white;
-  
- }
- /* END CSS for GrowInfo Component */
+.growImgBox {
+  width: 95%;
+  height: auto;
+  border: black solid 5px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 15px;
+  border-radius: 15px;
+
+
+}
+
+.growImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exit {
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  background-color: black;
+  border-radius: 10px;
+
+}
+
+.exit i {
+  font-size: 40px;
+  color: white;
+
+}
+
+/* END CSS for GrowInfo Component */
 
 /* Forum style start here */
 
@@ -211,8 +227,8 @@
 }
 
 .control-arrow {
- background-color: rgba(22, 12, 83, 0.1);
- color: black;
+  background-color: rgba(22, 12, 83, 0.1);
+  color: black;
 
 }
 
@@ -223,7 +239,7 @@
 
 .MainCar {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -239,13 +255,16 @@
   height: 100%;
   position: relative;
 }
-.loginSignupBtnBox{
- margin-top:200px;;
-  width:100%;
-  position:relative;
 
- 
+.loginSignupBtnBox {
+  margin-top: 200px;
+  ;
+  width: 100%;
+  position: relative;
+
+
 }
+
 .Gencard {
   position: absolute;
   top: 0;
@@ -268,7 +287,7 @@
   transform: scale(1);
   z-index: 99;
   border-radius: 10%;
-  
+
 }
 
 .Gencard--left {
@@ -288,6 +307,7 @@
   height: 250px;
   border-radius: 10%;
 }
+
 .imgCards {
   border-radius: 10%;
   width: 200px;
@@ -314,33 +334,35 @@
 /* General Carousel ends here */
 
 /* Login starts here */
-.loginContainer{
-  background-color:white;
-  width:100%;
-  height:100%;
-  position:absolute;
-  left:0;
-  top:0;
-  z-index:1001;
+.loginContainer {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1001;
 }
 
 /* Login ends here */
 
 /* Signup  starts here */
-.signupContainer{
-  background-color:white;
-  width:100%;
-  height:100%;
-  position:absolute;
-  
-  top:400px;
-  z-index:1001;
+.signupContainer {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  top: 400px;
+  z-index: 1001;
 
 
 }
-.signupForm{
-margin-top:10%;
+
+.signupForm {
+  margin-top: 10%;
 }
+
 /* Signup ends here */
 
 /* Login Container ends here */
@@ -354,4 +376,3 @@ margin-top:10%;
 
 
 /* Mission ends here */
-
