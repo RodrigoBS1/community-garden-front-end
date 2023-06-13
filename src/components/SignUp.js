@@ -1,9 +1,16 @@
 import { useState, setState } from 'react'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import LocalGardens from './LocalGardens'
+
 
 const SignUp = () => {
-
-    const [userInfo, setUserInfo ] = useState ({
+    
+    const [showGardens, setShowGardens ] = useState(['none'])
+    const [ citySel, setCitySel ] = useState('')
+    console.log(showGardens)
+    const [ userInfo, setUserInfo ] = useState ({
         firstName:'',
         lastName:'',
         userName:'',
@@ -20,14 +27,18 @@ const SignUp = () => {
 
     const handleChange2 = (event) => {
         console.log('city changed')
-        setUserInfo({...userInfo, [event.target.name] : event.target.value.toLowerCase()})
-        console.log(userInfo)
+        setUserInfo({...userInfo, [event.target.name] : event.target.value})
+       
     }
 
     const handleSubmit = async (event) => {
+        setCitySel(userInfo.city)
+        console.log(citySel)
         console.log('clicked submit')
         event.preventDefault()
         console.log(userInfo)
+        
+       
 
         try{
             const response = await fetch('https://community-garden-api.onrender.com/users',{
@@ -49,11 +60,18 @@ const SignUp = () => {
             
         }
         setUserInfo({ 
-            title:'',
-            entry:'',  
-            link:'',
-            topic:'',
+            firstName:'',
+            lastName:'',
+            userName:'',
+            password:'',
+            phoneNumber:'',
+            city:'',
+            state:'',
+            zipcode:'',
+            email:''
         })
+       setShowGardens('block') 
+
     }
 
     
@@ -90,6 +108,9 @@ const SignUp = () => {
                 </div>
                 <button >Find My Garden</button>
             </form>
+            <div className="localGardenDisplay" style={{display:showGardens}}>
+                <LocalGardens  city={citySel}/>
+            </div>
         </div>
     )
 }
