@@ -23,17 +23,19 @@
   }
 }
 
-.App-footer {
+.footer-section {
   background-color: #293d37;
-  min-height: 5vh;
+  min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction:row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   font-size: calc 10px;
   color: white;
   margin-bottom:50px;
+  /* padding: auto; */
 }
+
 
 .App-link {
   color: #61dafb;
@@ -173,17 +175,13 @@
 
 .forum-section {
   display: block;
-  margin: 5rem;
+  align-items: center;
+  margin: 15rem;
   padding: 2rem;
   justify-content: space-around;
   align-items: center;
   border: 1px solid white;
 
-}
-
-.images-article {
-  width: 350px;
-  height: auto;
 }
 
 .comment-form {
@@ -192,11 +190,12 @@
 }
 
 .article-container {
-  margin: 2rem ;
+  margin: 2rem;
+  padding: 5rem;
 }
 
 .carousel-status {
-  margin-right: 2rem;
+  margin-right: 4rem;
 }
 
 .control-arrow {
@@ -204,8 +203,6 @@
  color: black;
 
 }
-
-
 
 /* Forum style ends here */
 
@@ -314,6 +311,7 @@
   top:0;
   z-index:1001;
 }
+
 /* Login ends here */
 
 /* Signup  starts here */
@@ -332,3 +330,16 @@
 margin-top:10%;
 }
 /* Signup ends here */
+
+/* Login Container ends here */
+
+/* Mission start here */
+
+.mission {
+  display: block;
+  margin: 5rem;
+}
+
+
+/* Mission ends here */
+
