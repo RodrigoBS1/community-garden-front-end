@@ -175,17 +175,13 @@
 
 .forum-section {
   display: block;
-  margin: 5rem;
+  align-items: center;
+  margin: 15rem;
   padding: 2rem;
   justify-content: space-around;
   align-items: center;
   border: 1px solid white;
 
-}
-
-.images-article {
-  width: 350px;
-  height: auto;
 }
 
 .comment-form {
@@ -194,11 +190,12 @@
 }
 
 .article-container {
-  margin: 2rem ;
+  margin: 2rem;
+  padding: 5rem;
 }
 
 .carousel-status {
-  margin-right: 2rem;
+  margin-right: 4rem;
 }
 
 .control-arrow {
@@ -315,3 +312,13 @@
   z-index:1001;
 }
 /* Login Container ends here */
+
+/* Mission start here */
+
+.mission {
+  display: block;
+  margin: 5rem;
+}
+
+
+/* Mission ends here */

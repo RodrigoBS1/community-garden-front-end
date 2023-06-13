@@ -1,13 +1,13 @@
+import "./App.css";
+import { NavLink, Route, Routes } from "react-router-dom";
+// import { useEffect, useState } from "react";
 
-import './App.css';
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom"
-import { useEffect, useState } from 'react'
-
-import Forum from './components/Forum';
-import GeneralCarousel from './components/GeneralCarousel';
+import Forum from "./components/Forum";
+import GeneralCarousel from "./components/GeneralCarousel";
 import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
 import Statements from "./components/Statements";
+
 
 import Articles from './components/Article';
 import Navbar from './components/NavBar';
@@ -19,12 +19,22 @@ import SignUp from './components/SignUp'
 import Footer from './components/Footer';
 
 
+import Articles from "./components/Article";
+import Navbar from "./components/NavBar";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+
+
 function App() {
-
-
   return (
-
     <div className="App">
+      <nav>
+        <Navbar />
+      </nav>
+
+      <div className="mission">
+        <Statements />
+      </div>
 
 
       <Router>
@@ -49,10 +59,7 @@ function App() {
     </div>
   );
 
+
 }
-
-
-
-
 
 export default App;
