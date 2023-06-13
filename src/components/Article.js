@@ -44,7 +44,7 @@ const Articles = () => {
   }, []);
   return (
     <div>
-      <h2 className="articles-title">Articles</h2>
+      <h1 className="articles-title">Articles</h1>
       <div className="articles-container">
         {articlesData.map((article) => (
           <div key={article.id} className="article-card">

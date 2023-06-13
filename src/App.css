@@ -174,17 +174,12 @@
 .forum-section {
   display: block;
   align-items: center;
-  margin: 5rem;
+  margin: 15rem;
   padding: 2rem;
   justify-content: space-around;
   align-items: center;
   border: 1px solid white;
 
-}
-
-.images-article {
-  width: 350px;
-  height: auto;
 }
 
 .comment-form {
@@ -317,3 +312,13 @@
   z-index:1001;
 }
 /* Login Container ends here */
+
+/* Mission start here */
+
+.mission {
+  display: block;
+  margin: 5rem;
+}
+
+
+/* Mission ends here */
