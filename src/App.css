@@ -28,7 +28,7 @@
   height: 7rem;
   bottom: 0 ;
   width: 100%;
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction:row;
   align-items: center;
@@ -251,7 +251,7 @@
 
 .carousel1 {
   width: 100%;
-  height: 100%;
+  height: 275px;
   position: relative;
 }
 .loginSignupBtnBox{
