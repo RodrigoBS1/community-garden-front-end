@@ -1,8 +1,6 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "../Navbar.css";
-
-
+import logo from "../images/logo.jpeg"
 function NavBar() {
   const [active, setActive] = useState("nav__menu");
   const [icon, setIcon] = useState("nav__toggler");
@@ -16,8 +14,8 @@ function NavBar() {
   };
   return (
     <nav className="nav sticky">
-      <a href="#" className="nav__brand">
-      <img src="./" alt="" />
+      <a href="" className="nav__brand logo">
+        <img src={logo} alt="" />
       </a>
       <ul className={active}>
         <li className="nav__item">
@@ -32,21 +30,16 @@ function NavBar() {
         </li>
         {/* <li className="nav__item">
           <a href="#" className="nav__link">
-           
+          
           </a>
         </li> */}
         <li className="nav__item">
-
           <a href="/signup" className="nav__link">
-
             Sign Up
           </a>
         </li>
         <li className="nav__item">
-
           <a href="login" className="nav__link">
-
-
             Log In
           </a>
         </li>
@@ -59,4 +52,4 @@ function NavBar() {
     </nav>
   );
 }
-export default NavBar; 
+export default NavBar;
