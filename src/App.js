@@ -16,6 +16,8 @@ import Login from './components/Login'
 
 import SignUp from './components/SignUp'
 
+import Footer from './components/Footer';
+
 
 function App() {
 
@@ -26,36 +28,27 @@ function App() {
 
 
       <Router>
-        
-      <Navbar />
-        {/* <header className="App-header">
-          <h1> Community Garden</h1>  
-        
-        </header> */}
+
+        <Navbar />
+
         <Routes>
-          <Route path = '/' element = {<GeneralCarousel />} />
-          <Route path = '/signup' element = {<SignUp />} />
-          <Route path = '/login' element = {<Login />} />
-          <Route path = '/seasoninfo/:season' element = {<SeasonInfo />} />
-          <Route path = '/growinfo/:season' element = {<GrowInfo />} />
-        </Routes> 
-        
+          <Route path='/' element={<GeneralCarousel />} />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/seasoninfo/:season' element={<SeasonInfo />} />
+          <Route path='/growinfo/:season' element={<GrowInfo />} />
+        </Routes>
+
         <Statements />
-       
         <Forum />
         <Articles />
-      </Router> 
-       <footer className="App-footer">
-        <h1> Footer</h1>  
-      </footer>
-     
-
-   
-
+        <Footer />
+      </Router>
+      
 
     </div>
   );
-  
+
 }
 
 
