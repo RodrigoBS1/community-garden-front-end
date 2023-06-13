@@ -10,14 +10,9 @@ const Forum = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3001/forum');
+        const response = await fetch('https://community-garden-api.onrender.com/forum');
         const data = await response.json();
-        const articlesWithNumbers = data.map((article) => ({
-          ...article,
-          likes: Number(article.likes),
-          dislikes: Number(article.dislikes),
-        }));
-        setArticles(articlesWithNumbers);
+        setArticles(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -39,7 +34,7 @@ const Forum = () => {
     setArticles(updatedArticles);
 
     try {
-      await fetch(`http://localhost:3001/forum/${articleId}/like`, {
+      await fetch(`https://community-garden-api.onrender.com/forum/${articleId}/like`, {
         method: 'POST',
       });
     } catch (error) {
@@ -60,7 +55,7 @@ const Forum = () => {
     setArticles(updatedArticles);
 
     try {
-      await fetch(`http://localhost:3001/forum/${articleId}/dislike`, {
+      await fetch(`https://community-garden-api.onrender.com/forum/${articleId}/dislike`, {
         method: 'POST',
       });
     } catch (error) {
@@ -72,7 +67,7 @@ const Forum = () => {
     event.preventDefault();
     if (newComment.trim() !== '') {
       try {
-        const response = await fetch(`http://localhost:3001/forum/${articleId}/comment`, {
+        const response = await fetch(`https://community-garden-api.onrender.com/forum/${articleId}/comment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -81,7 +76,7 @@ const Forum = () => {
             comment: newComment,
           }),
         });
-  
+
         if (response.ok) {
           console.log('Comment saved successfully');
           const updatedArticles = articles.map((article) => {
@@ -104,8 +99,6 @@ const Forum = () => {
       }
     }
   };
-  
-  
 
   return (
     <div className='forum-section'>
@@ -113,28 +106,29 @@ const Forum = () => {
       <Carousel className='control-arrow'>
         {articles.map((article) => (
           <div className='article-container' key={article.id}>
-            <h3>{article.article}</h3>
-            <p>{article.content}</p>
+            <h2>{article.article}</h2><br />
+            <p>{article.content}</p><br />
             <button onClick={() => handleLike(article.id)}>Like ({article.likes})</button>
             <button onClick={() => handleDislike(article.id)}>Dislike ({article.dislikes})</button>
             <h4>Comments</h4>
-            {article.comments && article.comments.length === 0 ? (
-              <p>No comments available.</p>
-            ) : (
+            {article.comments && article.comments.length > 0 ? (
               <ul>
-                {article.comments && article.comments.map((comment, index) => (
+                {article.comments.map((comment, index) => (
                   <li key={index}>{comment}</li>
                 ))}
               </ul>
+            ) : (
+              <p>{article.comment}</p>
             )}
             <form className='comment-form' onSubmit={(event) => handleNewCommentSubmit(event, article.id)}>
               <input
                 type='text'
-                placeholder='Write your comment...'
+                name='comment'
+                placeholder='Add a comment'
                 value={newComment}
                 onChange={(event) => setNewComment(event.target.value)}
               />
-              <button type='submit'>Add Comment</button>
+              <button type='submit'>Submit</button>
             </form>
           </div>
         ))}

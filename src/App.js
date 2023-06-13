@@ -1,59 +1,52 @@
+import "./App.css";
+import { Navlink, Route, Routes, BrowserRouter as Router } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-import './App.css';
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom"
-import Forum from './components/Forum';
-import GeneralCarousel from './components/GeneralCarousel';
 
+// import Forum from "./components/Forum";
+import GeneralCarousel from "./components/GeneralCarousel";
 import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
+import Statements from "./components/Statements";
+import Footer from './components/Footer';
+import Articles from "./components/Article";
+import Navbar from "./components/NavBar";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1> Community Garden</h1>
-      </header>
+      
+      <nav className="sticky">
+        <Navbar />
+      </nav>
 
-    <GeneralCarousel />
-    <br />
-    <hr />
-    <hr />
-   
-
-
-    
-      <div>
-        <Forum />
+      <div className="mission">
+        <Statements />
       </div>
-   
 
+        <Routes>
+          <Route path='/' element={<GeneralCarousel />} />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/seasoninfo/:season' element={<SeasonInfo />} />
+          <Route path='/growinfo/:season' element={<GrowInfo />} />
+        </Routes>
 
-   
-   
-    <Router>
-      <Routes>
-        
-        <Route path = '/seasoninfo' element = {<SeasonInfo season='Summer'/>} />
-        <Route path = '/growinfo' element = {<GrowInfo />} />
-      </Routes>  
+        {/* <Forum /> */}
+        <br></br>
+        <Articles />
+        <Footer />
 
-      <SeasonInfo season="Spring" />
-    </Router>
 
     </div>
   );
+
+
 }
-
-// --Floating Nav Bar starts here!--
-
-// --Floating Nav Bar ends here!--
-
-// --Education sections starts here!--
-
-// --Education sections ends here!--
-
-// --Forum sections starts here!--
-
-// --Forum sections ends here!--
 
 export default App;
