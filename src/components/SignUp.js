@@ -1,8 +1,12 @@
 import { useState, setState } from 'react'
 import { useEffect } from 'react'
+
 import { useNavigate } from 'react-router-dom'
 
 import LocalGardens from './LocalGardens'
+=======
+import "../SignUp.css"
+
 
 
 const SignUp = () => {
@@ -106,7 +110,9 @@ const SignUp = () => {
                     <label htmlFor="phoneNumber" >Phone Number: </label>
                     <input onChange={handleChange} type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" />
                 </div>
-                <button >Find My Garden</button>
+                <div className='button'>
+                <button>Find My Garden</button>
+                </div>
             </form>
             <div className="localGardenDisplay" style={{display:showGardens}}>
                 <LocalGardens  city={citySel}/>
