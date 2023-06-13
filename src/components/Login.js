@@ -25,6 +25,15 @@ const Login = () => {
     event.preventDefault();
     console.log(loginInfo);
     console.log(users);
+    users.forEach(user =>{
+        if((user.userName === loginInfo.userName)&&(user.password === loginInfo.password)){
+            console.log('Found user!')
+        }
+        else{
+            console.log('Username or password incorrect')
+        }
+    })
+    setLoginInfo([])
   };
 
   return (
