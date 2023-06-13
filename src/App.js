@@ -10,7 +10,7 @@ import SeasonInfo from "./components/SeasonInfo";
 import GrowInfo from "./components/GrowInfo";
 import Statements from "./components/Statements";
 import Footer from './components/Footer';
-// import Articles from "./components/Article";
+import Articles from "./components/Article";
 import Navbar from "./components/NavBar";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
@@ -38,7 +38,8 @@ function App() {
         </Routes>
 
         {/* <Forum /> */}
-        {/* <Articles /> */}
+        <br></br>
+        <Articles />
         <Footer />
 
 

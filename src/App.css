@@ -23,8 +23,11 @@
   }
 }
 
+footer{
+  
+}
 .footer-section {
-  background-color: #293d37;
+  background-color: #E1D4BB;
   min-height: 10vh;
   display: flex;
   flex-direction:row;

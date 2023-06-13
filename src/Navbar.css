@@ -15,7 +15,7 @@ li {
 }
 a {
   text-decoration: none;
-  color: #EEEEEE;
+  color: #344D67;
   font-size: 22.5px;
 }
 .sticky {
@@ -26,14 +26,25 @@ a {
 .nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 10vh;
-  background: #6ECCAF;
+  justify-content: space-evenly;
+  height: 12vh;
+  background: #E1D4BB;
   margin-bottom: 3rem;
 }
 .nav__brand {
   text-transform: uppercase;
 }
+
+.logo{
+  width: fit-content;
+  height: fit-content;
+}
+
+img{
+  width:  480px;
+  height: auto;
+}
+
 .nav__menu {
   display: flex;
   align-items: center;

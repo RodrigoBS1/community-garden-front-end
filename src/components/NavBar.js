@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "../Navbar.css";
+import logo from "../images/logo.jpeg"
 
 
 function NavBar() {
@@ -16,8 +17,8 @@ function NavBar() {
   };
   return (
     <nav className="nav sticky">
-      <a href="#" className="nav__brand">
-      <img src="./" alt="" />
+      <a href="" className="nav__brand logo">
+        <img src={logo} alt="" />
       </a>
       <ul className={active}>
         <li className="nav__item">
