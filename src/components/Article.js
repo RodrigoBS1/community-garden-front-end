@@ -1,15 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import '../Article.css';
+
 const Card = ({ title, image, links }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+
   const handleClick = (event, url) => {
     event.preventDefault();
     window.open(url, '_blank');
   };
+
   const cardStyle = {
     backgroundImage: `url(${image})`,
   };
+
   return (
     <a href={links.trim()} target="_blank" rel="noopener noreferrer" className={`card ${isFlipped ? 'flipped' : ''}`} onClick={(event) => handleClick(event, links.trim())}>
       <div className="card-front" style={cardStyle}></div>
@@ -28,36 +32,45 @@ const Card = ({ title, image, links }) => {
     </a>
   );
 };
+
 const Articles = () => {
   const [articlesData, setArticlesData] = useState([]);
+
   useEffect(() => {
     const fetchArticlesData = async () => {
       try {
         const response = await fetch('https://community-garden-api.onrender.com/articles');
         const data = await response.json();
-        setArticlesData(data);
+        setArticlesData(data.articles);
       } catch (error) {
         console.error('Error fetching articles data:', error);
       }
     };
+
     fetchArticlesData();
   }, []);
+
   return (
     <div>
       <h1 className="articles-title">Articles</h1>
       <div className="articles-container">
-        {articlesData.map((article) => (
-          <div key={article.id} className="article-card">
-            <h3 className="card-title">{article.title}</h3>
-            <Card
-              title={article.title}
-              image={article.image}
-              links={article.link}
-            />
-          </div>
-        ))}
+        {articlesData.length === 0 ? (
+          <p>Loading articles...</p>
+        ) : (
+          articlesData.map((article) => (
+            <div key={article.id} className="article-card">
+              <h3 className="card-title">{article.title}</h3>
+              <Card
+                title={article.title}
+                image={article.image}
+                links={article.link}
+              />
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
 };
+
 export default Articles;
