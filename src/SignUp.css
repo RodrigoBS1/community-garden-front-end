@@ -1,0 +1,60 @@
+.signupContainer {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+}
+.signupForm {
+    display: grid;
+    gap: 10px;
+    width: 70%;
+    height: auto;
+    background-color: #EEEEEE;
+    padding: 2rem;
+    text-align: right;
+    margin-left: 30rem;
+  }
+  
+  .signForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  
+  label {
+    color: #344D67;
+    align-self: center;
+  }
+  
+  input[type="text"] {
+    background-color: #E1D4BB;
+    border: none;
+    padding: 5px;
+    width: 50%; /* Adjust the width as needed */
+  }
+  
+  button {
+    background-color: #6ECCAF;
+    color: #ADE792;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 20%;
+    text-align: center;
+    align-items: center;
+
+  }
+  
+  button:hover {
+    background-color: #ADE792;
+    color: #344D67;
+  }
+
+  .button {
+    text-align: center;
+    margin: 2rem;
+  }
+  
