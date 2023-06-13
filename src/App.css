@@ -24,8 +24,11 @@
 }
 
 .footer-section {
-  background-color: #293d37;
-  min-height: 10vh;
+  background-color: #E1D4BB;
+  height: 7rem;
+  bottom: 0 ;
+  width: 100%;
+  position: absolute;
   display: flex;
   flex-direction:row;
   align-items: center;
@@ -33,6 +36,7 @@
   font-size: calc 10px;
   color: white;
   margin-bottom:50px;
+
   /* padding: auto; */
 }
 

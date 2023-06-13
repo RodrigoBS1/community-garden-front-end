@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Navbar.css";
-import logo from "../images/logo.jpeg"
+import logo from "../images/logo.jpeg";
+
 function NavBar() {
   const [active, setActive] = useState("nav__menu");
   const [icon, setIcon] = useState("nav__toggler");
@@ -19,7 +20,7 @@ function NavBar() {
       </a>
       <ul className={active}>
         <li className="nav__item">
-          <a href="#home" className="nav__link">
+          <a href="/" className="nav__link">
             Home
           </a>
         </li>
