@@ -9,10 +9,11 @@ import LocalGardens from './LocalGardens'
 
 
 const SignUp = () => {
-    
-    const [showGardens, setShowGardens ] = useState(['none'])
+    let myCity = ''
+    // const [showGardens, setShowGardens ] = useState(['none'])
     const [ citySel, setCitySel ] = useState('')
-    console.log(showGardens)
+    // console.log(showGardens)
+    const navigate = useNavigate()
     const [ userInfo, setUserInfo ] = useState ({
         firstName:'',
         lastName:'',
@@ -35,11 +36,15 @@ const SignUp = () => {
     }
 
     const handleSubmit = async (event) => {
-        setCitySel(userInfo.city)
+        // setCitySel(userInfo.city)
         console.log(citySel)
         console.log('clicked submit')
         event.preventDefault()
         console.log(userInfo)
+        myCity = userInfo.city
+        setCitySel(userInfo.city)
+        console.log(citySel)
+        console.log(myCity)
         
        
 
@@ -73,7 +78,8 @@ const SignUp = () => {
             zipcode:'',
             email:''
         })
-       setShowGardens('block') 
+    //    setShowGardens('block') 
+    navigate(`/localgardens/${myCity}`)
 
     }
 
@@ -113,9 +119,9 @@ const SignUp = () => {
                 <button>Find My Garden</button>
                 </div>
             </form>
-            <div className="localGardenDisplay" style={{display:showGardens}}>
+            {/* <div className="localGardenDisplay" style={{display:showGardens}}>
                 <LocalGardens  city={citySel}/>
-            </div>
+            </div> */}
         </div>
     )
 }

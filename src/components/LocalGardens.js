@@ -1,8 +1,11 @@
 import { useState, setState } from 'react'
 import { useEffect } from 'react'
+import { params } from 'react'
+import { useParams } from 'react-router-dom'
 
-const LocalGardens = ({city}) => {
+const LocalGardens = () => {
 
+    const { city } = useParams()
     console.log(city)
     const [ gardenList, setGardenList ] = useState([])
     
@@ -10,7 +13,7 @@ const LocalGardens = ({city}) => {
 
         const url = `https://community-garden-api.onrender.com/gardens/${city}`
         const response = await fetch(url)
-        const { data } = await response.json()
+        const  data  = await response.json()
         setGardenList(data)
     }
 
@@ -24,15 +27,16 @@ const LocalGardens = ({city}) => {
     return(
         <div className="localGardenContainer">
                     <h1>Community Gardens in {city}</h1>
+                    
                     <ul className="gardenList">
-                        {gardenList.map((gardens)=>{
+                        {gardenList.map(gardens=>{
                             return(
-                                <li  key = {gardens.id}>{gardenList.name}</li>
-                                
+                                <li  key = {gardens.id}>{gardens.name}</li>
                             )
+                            
                         })}
                     </ul>
-                    <div  className="exit"><i className='bx bx-x'></i></div>
+                    <div  className="exit"><i className='bx bx-x'></i></div> 
             </div>
     )
 }
