@@ -27,6 +27,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
+      
       <nav className="sticky">
         <Navbar />
       </nav>
@@ -34,6 +35,7 @@ function App() {
       <div className="mission">
         <Statements />
       </div>
+     
         <Routes>
           <Route path='/' element={<GeneralCarousel />} />
           <Route path='/signup' element={<SignUp />} />
@@ -42,9 +44,10 @@ function App() {
           <Route path='/growinfo/:season' element={<GrowInfo />} />
         </Routes>
 
-        <Forum />
-        <Articles />
+        {/* <Forum /> */}
+        {/* <Articles /> */}
         <Footer />
+        
     </div>
   );
 
