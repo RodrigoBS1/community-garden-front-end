@@ -27,11 +27,15 @@ const LocalGardens = () => {
     return(
         <div className="localGardenContainer">
                     <h1>Community Gardens in {city}</h1>
+                    <h2>Choose your garden.</h2>
                     
                     <ul className="gardenList">
                         {gardenList.map(gardens=>{
                             return(
-                                <li  key = {gardens.id}>{gardens.name}</li>
+                                <div>
+                                <input type="checkbox" id={gardens.name} name={gardens.name} value={gardens.name} key = {gardens.id}/>
+                                <label htmlFor={gardens.name}>{gardens.name}</label>
+                                </div>
                             )
                             
                         })}
