@@ -40,7 +40,7 @@ function NavBar() {
           </a>
         </li>
         <li className="nav__item">
-          <a href="login" className="nav__link">
+          <a href="/login" className="nav__link">
             Log In
           </a>
         </li>

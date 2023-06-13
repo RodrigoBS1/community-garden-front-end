@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import Navbar from "./components/NavBar";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import LocalGardens from './components/LocalGardens'
 
 
 
@@ -35,6 +36,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/seasoninfo/:season' element={<SeasonInfo />} />
           <Route path='/growinfo/:season' element={<GrowInfo />} />
+          <Route path='/localgardens/:city' element={<LocalGardens />} />
         </Routes>
 
         {/* <Forum /> */}
