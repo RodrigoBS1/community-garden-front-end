@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import '../Forum.css'
 
 
 const Forum = () => {
@@ -106,8 +107,8 @@ const Forum = () => {
       <Carousel className='control-arrow'>
         {articles.map((article) => (
           <div className='article-container' key={article.id}>
-            <h2>{article.article}</h2><br />
-            <p>{article.content}</p><br />
+            <h2>{article.article}</h2>
+            <p>{article.content}</p>
             <button className="button like" onClick={() => handleLike(article.id)}>Like ({article.likes})</button>
             <button className="button dislike" onClick={() => handleDislike(article.id)}>Dislike ({article.dislikes})</button>
             <h4 className='commentTitle'>Comments</h4>

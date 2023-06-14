@@ -236,12 +236,12 @@ footer{
 }
 
 .commentTitle {
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-bottom: 1rem;
 }
 
 .comment-form {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .comment-form input[type="text"] {
@@ -279,6 +279,7 @@ footer{
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
+  margin: 2rem;
 }
 
 .button.like {
