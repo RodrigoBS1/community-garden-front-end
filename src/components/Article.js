@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import '../Article.css';
 
 const Card = ({ title, image, links }) => {
@@ -31,6 +32,8 @@ const Card = ({ title, image, links }) => {
 };
 
 const Articles = () => {
+  const location = useLocation();
+
   const articlesData = [
     {
       title: "Easiest Vegetables To Grow",
@@ -56,21 +59,26 @@ const Articles = () => {
     },
   ];
 
+  // Check if the location is the home page
+  const isHomePage = location.pathname === '/';
+
   return (
     <div>
-      <h1 className="articles-title">Articles</h1>
-      <div className="articles-container">
-        {articlesData.map((article, index) => (
-          <div key={index} className="article-card">
-            <h3 className="card-title">{article.title}</h3>
-            <Card
-              title={article.title}
-              image={article.image}
-              links={article.links}
-            />
-          </div>
-        ))}
-      </div>
+      {isHomePage && <h1 className="articles-title">Articles</h1>}
+      {isHomePage && (
+        <div className="articles-container">
+          {articlesData.map((article, index) => (
+            <div key={index} className="article-card">
+              <h3 className="card-title">{article.title}</h3>
+              <Card
+                title={article.title}
+                image={article.image}
+                links={article.links}
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
