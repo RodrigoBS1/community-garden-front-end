@@ -71,9 +71,9 @@ const LocalGardens = () => {
             
         }
        
-        userInfo = userInfo + '_'+pickedGarden
-        console.log(userInfo)
-     navigate(`/communitylanding/${userInfo}`)
+        let info = userInfo.city + '_'+pickedGarden
+        console.log(info)
+     navigate(`/communitylanding/${info}`)
 
     }
     if(!gardenList){
