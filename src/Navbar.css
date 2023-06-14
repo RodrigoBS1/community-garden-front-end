@@ -35,14 +35,17 @@ a {
 .nav__brand {
   text-transform: uppercase;
 }
+
 .logo{
   width: fit-content;
   height: fit-content;
 }
+
 img{
   width:  480px;
   height: auto;
 }
+
 .nav__menu {
   display: flex;
   align-items: center;

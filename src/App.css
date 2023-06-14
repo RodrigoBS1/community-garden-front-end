@@ -23,20 +23,22 @@
   }
 }
 
+footer{
+  
+}
 .footer-section {
   background-color: #E1D4BB;
   height: 7rem;
   bottom: 0 ;
   width: 100%;
   position: relative;
+  min-height: 10vh;
   display: flex;
   flex-direction:row;
   align-items: center;
   justify-content: space-evenly;
   font-size: calc 10px;
   color: white;
-  margin-bottom:50px;
-
   /* padding: auto; */
 }
 
@@ -208,7 +210,8 @@
   justify-content: space-around;
   align-items: center;
   border: 1px solid white;
-
+  background-color: #ADE792;
+  color: #344D67;
 }
 
 .comment-form {
@@ -219,6 +222,7 @@
 .article-container {
   margin: 2rem;
   padding: 5rem;
+  color: #344D67;
 }
 
 .carousel-status {
@@ -253,6 +257,7 @@
   width: 100%;
   height: 275px;
   position: relative;
+  
 }
 .loginSignupBtnBox{
  margin-top:200px;;
@@ -276,6 +281,7 @@
   opacity: 0;
   transition: 500ms;
   border-radius: 10%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .Gencard--active {

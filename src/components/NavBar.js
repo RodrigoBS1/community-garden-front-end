@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import "../Navbar.css";
+
 import logo from "../images/logo.jpeg";
 import About from "./About";
+
+import logo from "../images/logo.jpeg"
+
+
 
 function NavBar() {
   const [active, setActive] = useState("nav__menu");
