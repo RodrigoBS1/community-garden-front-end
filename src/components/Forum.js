@@ -107,7 +107,7 @@ const Forum = () => {
       <Carousel className='control-arrow'>
         {articles.map((article) => (
           <div className='article-container' key={article.id}>
-            <h2>{article.article}</h2>
+            <h2 className='title-content'>{article.article}</h2>
             <p>{article.content}</p>
             <button className="button like" onClick={() => handleLike(article.id)}>Like ({article.likes})</button>
             <button className="button dislike" onClick={() => handleDislike(article.id)}>Dislike ({article.dislikes})</button>
