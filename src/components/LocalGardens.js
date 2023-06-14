@@ -56,8 +56,8 @@ const LocalGardens = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ garden: pickedGarden }),
-        }
-      );
+        });
+
 
       if (response.ok) {
         const responseData = await response.json();
@@ -69,9 +69,9 @@ const LocalGardens = () => {
       console.error("Error submitting data:", error);
     }
 
-    userInfo = userInfo + "_" + pickedGarden;
-    console.log(userInfo);
-    navigate(`/communitylanding/${userInfo}`);
+         let info = userInfo.city + '_'+pickedGarden
+        console.log(info)
+     navigate(`/communitylanding/${info}`)
   };
   if (!gardenList) {
     return <div>Loading...</div>;

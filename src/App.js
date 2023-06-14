@@ -47,7 +47,7 @@ function App() {
 
 
           <Route path='/localgardens/:userInfo' element={<LocalGardens />} />
-          <Route path='/communitylanding/:userInfo' element={<CommunityLanding />} />
+          <Route path='/communitylanding/:info' element={<CommunityLanding />} />
 
 
         </Routes>
