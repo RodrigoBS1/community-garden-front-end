@@ -23,12 +23,16 @@
   }
 }
 
+footer{
+  
+}
 .footer-section {
   background-color: #E1D4BB;
   height: 7rem;
   bottom: 0 ;
   width: 100%;
   position: relative;
+  min-height: 10vh;
   display: flex;
   flex-direction:row;
   align-items: center;

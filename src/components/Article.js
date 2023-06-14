@@ -14,13 +14,23 @@ const Card = ({ title, image, links }) => {
   };
 
   return (
+
     <div
       className={`card ${isFlipped ? 'flipped' : ''}`}
       onClick={() => setIsFlipped(!isFlipped)}
+
+    <a
+      href={links.trim()}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`card ${isFlipped ? 'flipped' : ''}`}
+      onClick={(event) => handleClick(event, links.trim())}
+
     >
       <div className="card-front" style={cardStyle}></div>
       <div className="card-back">
         <h3 className="card-title">{title}</h3>
+
         <div className="card-links-container">
           {links.map((link, index) => (
             <a
@@ -35,6 +45,23 @@ const Card = ({ title, image, links }) => {
             </a>
           ))}
         </div>
+
+        <ul className="card-links">
+          {Array.isArray(links) &&
+            links.map((link, index) => (
+              <li key={index}>
+                <a
+                  href={link.trim()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(event) => handleClick(event, link.trim())}
+                >
+                  Link {index + 1}
+                </a>
+              </li>
+            ))}
+        </ul>
+
       </div>
     </div>
   );
@@ -85,9 +112,15 @@ const Articles = () => {
           "https://deckers-nursery.com/garden-learning-center/the-ultimate-guide-to-seasonal-flowers/"
         ]
       }
+
     ];
 
     setArticlesData(articles);
+
+    };
+
+    fetchArticlesData();
+
   }, []);
 
   return (
@@ -97,11 +130,15 @@ const Articles = () => {
         {articlesData.map((article, index) => (
           <div key={index} className="article-card">
             <h3 className="card-title">{article.title}</h3>
+
             <Card
               title={article.title}
               image={article.image}
               links={article.links}
             />
+
+            <Card title={article.title} image={article.image} links={article.link} />
+
           </div>
         ))}
       </div>

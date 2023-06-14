@@ -53,6 +53,7 @@ function App() {
         </Routes>
         
 
+
         <Forum />
         <Articles />
         <Footer />
