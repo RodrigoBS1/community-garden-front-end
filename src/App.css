@@ -235,6 +235,72 @@ footer{
 
 }
 
+.title-content {
+  margin-bottom: 2rem;
+}
+
+.commentTitle {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.comment-form {
+  margin-top: 10px;
+}
+
+.comment-form input[type="text"] {
+  width: 50%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.comment-form button[type="submit"] {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #344D67;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.comment-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.button.like, .button.dislike {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 2rem;
+}
+
+.button.like {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.button.dislike {
+  background-color: #FF5722;
+  color: #fff;
+}
+
+.button.like:hover, .button.dislike:hover {
+  opacity: 0.8;
+}
+
+
 /* Forum style ends here */
 
 

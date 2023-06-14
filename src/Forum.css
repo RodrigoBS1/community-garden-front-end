@@ -1,0 +1,17 @@
+/* Forum.css */
+
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    /* Adjust the styles for smaller screens */
+    .button-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

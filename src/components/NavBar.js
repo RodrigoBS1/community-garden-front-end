@@ -5,9 +5,6 @@ import logo from "../images/logo.jpeg";
 import About from "./About";
 
 
-
-
-
 function NavBar() {
   const [active, setActive] = useState("nav__menu");
   const [icon, setIcon] = useState("nav__toggler");
