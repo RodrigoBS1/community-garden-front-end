@@ -3,8 +3,11 @@ import { useEffect } from "react";
 import "../Login.css";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
+import { useNavigate  } from 'react-router-dom'
 
 const Login = () => {
+  let userInfo
+  const navigate = useNavigate()
   const [loginInfo, setLoginInfo] = useState([]);
   const [users, setUsers] = useState([]);
 
@@ -28,12 +31,18 @@ const Login = () => {
     users.forEach(user =>{
         if((user.userName === loginInfo.userName)&&(user.password === loginInfo.password)){
             console.log('Found user!')
+            userInfo = user.id+'_'+user.city+'_'+user.userName+'_'+user.garden 
+            console.log(userInfo)
+            navigate(`/communitylanding/${userInfo}`)
         }
         else{
             console.log('Username or password incorrect')
         }
     })
+    
     setLoginInfo([])
+   
+    
   };
 
   return (

@@ -14,10 +14,10 @@ import Footer from './components/Footer';
 import Navbar from "./components/NavBar";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-
 import About from "./components/About";
-
 import LocalGardens from './components/LocalGardens'
+import CommunityLanding from "./components/CommunityLanding";
+
 
 
 
@@ -43,7 +43,8 @@ function App() {
 
           <Route path='/about' element={<About />} />
 
-          <Route path='/localgardens/:city' element={<LocalGardens />} />
+          <Route path='/localgardens/:userInfo' element={<LocalGardens />} />
+          <Route path='/communitylanding/:userInfo' element={<CommunityLanding />} />
 
         </Routes>
 
