@@ -22,6 +22,8 @@ const CommunityLanding = () => {
         const response = await fetch(url)
         const  data  = await response.json()
         setGardenData(data)
+        
+        
        
     }
     const findRules = (garden => {
@@ -29,7 +31,7 @@ const CommunityLanding = () => {
             if(gardenSpace.name === garden){
             console.log('found it')
             setGardenRules(gardenSpace.rules)
-            console.log(gardenRules)
+            console.log(...gardenRules)
             console.log(gardenAnnouncements)
             setGardenAnnouncements(gardenSpace.announcements)
             console.log(gardenAnnouncements)
@@ -40,12 +42,17 @@ const CommunityLanding = () => {
     useEffect(()=>{
         fetchGardenData()
         console.log(gardenData)
-        findRules(garden)
-        console.log(garden)
+      
     },[])
 
+    useEffect(()=>{
+      if (gardenData.length > 0){
+        findRules(garden)
+     }
+    },[gardenData])
+
     console.log(gardenRules)
- if(!gardenData){
+ if(!gardenRules){
     return(<div>Loading...</div>)
  }
     return(
