@@ -1,14 +1,20 @@
 import { useState, setState } from 'react'
 import { useEffect } from 'react'
-import { params } from 'react'
-import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+
+import { useParams, useNavigate, useLocation, Params } from 'react-router-dom'
+
 
 const LocalGardens = () => {
+
+//     const location = useLocation()
+//     const { id, city, user } = location.state
+//  console.log(id)
+//  console.log(city)
+//  console.log(user)
     const navigate = useNavigate()
-    let { userInfo } = useParams()
-    console.log(userInfo)
-    let userInfoArray = userInfo.split('_')
+    let  userInfo  = useParams()
+    console.log(userInfo.city)
+    let userInfoArray = userInfo.city.split('_')
     console.log(userInfoArray)
     let id = userInfoArray[0]
     console.log(id)

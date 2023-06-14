@@ -4,7 +4,7 @@ import "../Navbar.css";
 import logo from "../images/logo.jpeg";
 import About from "./About";
 
-import logo from "../images/logo.jpeg"
+
 
 
 

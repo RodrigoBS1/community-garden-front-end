@@ -1,6 +1,6 @@
 import { useState, setState } from 'react'
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import LocalGardens from './LocalGardens'
 import "../SignUp.css"
 
@@ -89,9 +89,11 @@ const SignUp = () => {
             // garden:''
         })
     //    setShowGardens('block') 
-    navigate(`/localgardens/${newID}_${myCity}_${newUser}`)
+     navigate(`/localgardens/${newID}_${myCity}_${newUser}`)
 
     }
+
+   
 
     
     return (
@@ -128,9 +130,10 @@ const SignUp = () => {
                 
              
                 <div className='buttonSubmitGarden'>
-                <button className='buttonGarden'>Find My Garden</button>
+                <button className='buttonGarden'>Sign Up</button>
                 </div>
             </form>
+            {/* <Link to='/localgardens' state={{id:newID, city:myCity, user:newUser}}><button className="seeGardens">Find My Garden</button></Link> */}
             
         </div>
     )
