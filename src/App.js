@@ -55,7 +55,7 @@ function App() {
 
 
         <Forum />
-        <Articles />
+        {/* <Articles /> */}
         <Footer />
 
 

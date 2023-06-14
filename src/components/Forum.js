@@ -108,9 +108,9 @@ const Forum = () => {
           <div className='article-container' key={article.id}>
             <h2>{article.article}</h2><br />
             <p>{article.content}</p><br />
-            <button onClick={() => handleLike(article.id)}>Like ({article.likes})</button>
-            <button onClick={() => handleDislike(article.id)}>Dislike ({article.dislikes})</button>
-            <h4>Comments</h4>
+            <button className="button like" onClick={() => handleLike(article.id)}>Like ({article.likes})</button>
+            <button className="button dislike" onClick={() => handleDislike(article.id)}>Dislike ({article.dislikes})</button>
+            <h4 className='commentTitle'>Comments</h4>
             {article.comments && article.comments.length > 0 ? (
               <ul>
                 {article.comments.map((comment, index) => (
