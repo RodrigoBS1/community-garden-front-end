@@ -25,13 +25,22 @@ const Login = () => {
     event.preventDefault();
     console.log(loginInfo);
     console.log(users);
+    users.forEach(user =>{
+        if((user.userName === loginInfo.userName)&&(user.password === loginInfo.password)){
+            console.log('Found user!')
+        }
+        else{
+            console.log('Username or password incorrect')
+        }
+    })
+    setLoginInfo([])
   };
 
   return (
     <div className="loginContainer">
         <NavBar />
       <form className="loginForm" onSubmit={handleSubmit}>
-        <label for="userName">Username</label>
+        <label htmlFor="userName">Username</label>
         <input
           className="inputLogin"
           onChange={handleChange}
@@ -40,7 +49,7 @@ const Login = () => {
           name="userName"
           placeholder="Username"
         />
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input
           className="inputLogin"
           onChange={handleChange}
