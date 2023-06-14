@@ -37,6 +37,9 @@ const GrowInfo = ({ name, companionPlants, watering, zones, seasons }) => {
 //     }
 //     else return noImg
 // }
+if(growItem.length===0){
+    return(<div className="fullScreen"><h1>Loading...</h1></div>)
+}
     return (
         <div className="fullScreen">
             <div className="GrowInfoCard">

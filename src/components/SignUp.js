@@ -1,45 +1,137 @@
+import { useState, setState } from 'react'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import LocalGardens from './LocalGardens'
+import "../SignUp.css"
+
+
+
+
 const SignUp = () => {
-
-    const handleChange = (e) => {
-
+    let myCity = ''
+    let newID
+    let newUser
+    // const [showGardens, setShowGardens ] = useState(['none'])
+    // const [ citySel, setCitySel ] = useState('')
+    // console.log(showGardens)
+    const navigate = useNavigate()
+    const [ userInfo, setUserInfo ] = useState ({
+        firstName:'',
+        lastName:'',
+        userName:'',
+        password:'',
+        phoneNumber:'',
+        city:'',
+        state:'',
+        zipcode:'',
+        email:''
+        // garden:''
+})
+    const handleChange = (event) => {
+        setUserInfo({...userInfo, [event.target.name] : event.target.value})
     }
 
-    const handleSubmit = (e) => {
+    const handleChange2 = (event) => {
+        console.log('city changed')
+        setUserInfo({...userInfo, [event.target.name] : event.target.value})
+       
+    }
+
+    const handleSubmit = async (event) => {
+        // setCitySel(userInfo.city)
+      
+        console.log('clicked submit')
+        event.preventDefault()
+        console.log(userInfo)
+        console.log(userInfo.garden)
+        myCity = userInfo.city
+       
+       
+        console.log(myCity)
         
+       
+
+        try{
+            const response = await fetch('https://community-garden-api.onrender.com/users',{
+               method: 'POST',
+               headers: {
+                'Content-Type' : 'application/json',
+               } ,
+               body: JSON.stringify(userInfo),
+            });
+
+            if (response.ok){
+                const responseData = await response.json();
+                console.log('Data submitted successfully:',responseData);
+                newID = responseData.id 
+                console.log(newID)
+                newUser = responseData.userName
+                console.log(newUser)
+            } else{
+                console.error('Error submitting data:',response.status);
+                }
+            }catch (error){
+                console.error('Error submitting data:',error)
+            
+        }
+     
+        console.log(newID)
+        setUserInfo({ 
+            firstName:'',
+            lastName:'',
+            userName:'',
+            password:'',
+            phoneNumber:'',
+            city:'',
+            state:'',
+            zipcode:'',
+            email:''
+            // garden:''
+        })
+    //    setShowGardens('block') 
+    navigate(`/localgardens/${newID}_${myCity}_${newUser}`)
+
     }
+
+    
     return (
         <div className="signupContainer" >
-            <form className="signupForm">
+            <form onSubmit={handleSubmit} className="signupForm">
                 <div className="signForm">
-                    <label for="firstName" >First Name: </label>
-                    <input onChange={handleChange} type="text" id="firstName" name="firstName" placeholder="First Name" />
+                    <label htmlFor="firstName" >First Name: </label>
+                    <input className='inputSignup' onChange={handleChange} type="text" id="firstName" name="firstName" placeholder="First Name" />
              
-                    <label for="lastName" >Last Name: </label>
-                    <input onChange={handleChange} type="text" id="lastName" name="lastName" placeholder="Last Name" />
+                    <label htmlFor="lastName" >Last Name: </label>
+                    <input className='inputSignup' onChange={handleChange} type="text" id="lastName" name="lastName" placeholder="Last Name" />
                 </div>
                 <div className="signForm">
-                    <label for="userName" >Username: </label>
-                    <input onChange={handleChange} type="text" id="userName" name="userName" placeholder="Username" />
+                    <label htmlFor="userName" >Username: </label>
+                    <input className='inputSignup' onChange={handleChange} type="text" id="userName" name="userName" placeholder="Username" />
                 
-                    <label for="password" >Password: </label>
-                    <input onChange={handleChange} type="text" id="password" name="password" placeholder="Password" />
+                    <label htmlFor="password" >Password: </label>
+                    <input className='inputSignup' onChange={handleChange} type="text" id="password" name="password" placeholder="Password" />
                 </div>
                 <div className="signForm">
-                    <label for="city" >City: </label>
-                    <input onChange={handleChange} type="text" id="city" name="city" placeholder="City" />
+                    <label htmlFor="city" >City: </label>
+                    <input className='inputSignup' onChange={handleChange2} type="text" id="city" name="city" placeholder="City" />
              
-                    <label for="state" >State: </label>
-                    <input onChange={handleChange} type="text" id="state" name="state" placeholder="State" />
+                    <label htmlFor="state" >State: </label>
+                    <input className='inputSignup' onChange={handleChange} type="text" id="state" name="state" placeholder="State" />
                 </div>
                 <div className="signForm">
-                    <label for="email" >Email: </label>
-                    <input onChange={handleChange} type="text" id="email" name="email" placeholder="Email" />
+                    <label htmlFor="email" >Email: </label>
+                    <input className='inputSignup' onChange={handleChange} type="text" id="email" name="email" placeholder="Email" />
              
-                    <label for="phoneNumber" >Phone Number: </label>
-                    <input onChange={handleChange} type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" />
+                    <label htmlFor="phoneNumber" >Phone Number: </label>
+                    <input className='inputSignup' onChange={handleChange} type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" />
                 </div>
-                <button onSubmit={handleSubmit}>Find My Garden</button>
+                
+             
+                <div className='buttonSubmitGarden'>
+                <button className='buttonGarden'>Find My Garden</button>
+                </div>
             </form>
+            
         </div>
     )
 }

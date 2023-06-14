@@ -1,7 +1,11 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "../Navbar.css";
+
+import logo from "../images/logo.jpeg";
+import About from "./About";
+
 import logo from "../images/logo.jpeg"
+
 
 
 function NavBar() {
@@ -22,32 +26,27 @@ function NavBar() {
       </a>
       <ul className={active}>
         <li className="nav__item">
-          <a href="#home" className="nav__link">
+          <a href="/" className="nav__link">
             Home
           </a>
         </li>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <a href="/about" className="nav__link">
             About
           </a>
         </li>
         {/* <li className="nav__item">
           <a href="#" className="nav__link">
-           
+          
           </a>
         </li> */}
         <li className="nav__item">
-
           <a href="/signup" className="nav__link">
-
             Sign Up
           </a>
         </li>
         <li className="nav__item">
-
           <a href="login" className="nav__link">
-
-
             Log In
           </a>
         </li>
@@ -60,4 +59,4 @@ function NavBar() {
     </nav>
   );
 }
-export default NavBar; 
+export default NavBar;

@@ -4,10 +4,10 @@
   flex-direction: column;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 .LogoIMG {
   width: 200px;
   height: 300px;
@@ -28,6 +28,10 @@ footer{
 }
 .footer-section {
   background-color: #E1D4BB;
+  height: 7rem;
+  bottom: 0 ;
+  width: 100%;
+  position: relative;
   min-height: 10vh;
   display: flex;
   flex-direction:row;
@@ -35,7 +39,6 @@ footer{
   justify-content: space-evenly;
   font-size: calc 10px;
   color: white;
-  margin-bottom:50px;
   /* padding: auto; */
 }
 
@@ -92,30 +95,41 @@ footer{
   position:absolute;
   top:0;
   left:0;
-  background-color: rgba(0,0,0,0.5);
+  /* background-color: rgba(0,0,0,0.5); */
   width:100%;
-  height:100%;
-  color:white;
+  height:60%;
+  color:#124928;
   font-weight: 600;
   line-height: 33px;
-  overflow:scroll;
+  /* overflow:scroll; */
 }
 .seasonContent h1{
   margin-top:30px;
   margin-bottom:20px;
 }
 .seasonContent a{
-  color:white;
+  color:#124928;
   font-size:2.2rem;
   width:100%;
   height:100%;
 }
 .veggieList{
-  display:flex;
-  flex-direction:column;
-  flex-wrap:wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+  grid-gap: 10px; 
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
-
+.veggieList li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #41BFB7; */
+  padding: 10px;
+  border-radius: 50%;
+  
+}
 
 .seasonContent .exit i{
  font-size:40px;
@@ -175,13 +189,13 @@ footer{
   position:absolute;
   right:10px;
   bottom:20px;
-  background-color:black;
+  /* background-color:black; */
   border-radius:10px;
-
  }
+
  .exit i{
   font-size:40px;
-  color:white;
+  color:rgb(24, 22, 22);
   
  }
  /* END CSS for GrowInfo Component */
@@ -196,7 +210,8 @@ footer{
   justify-content: space-around;
   align-items: center;
   border: 1px solid white;
-
+  background-color: #ADE792;
+  color: #344D67;
 }
 
 .comment-form {
@@ -207,6 +222,7 @@ footer{
 .article-container {
   margin: 2rem;
   padding: 5rem;
+  color: #344D67;
 }
 
 .carousel-status {
@@ -239,8 +255,9 @@ footer{
 
 .carousel1 {
   width: 100%;
-  height: 100%;
+  height: 275px;
   position: relative;
+  
 }
 .loginSignupBtnBox{
  margin-top:200px;;
@@ -264,6 +281,7 @@ footer{
   opacity: 0;
   transition: 500ms;
   border-radius: 10%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .Gencard--active {
@@ -325,6 +343,7 @@ footer{
   left:0;
   top:0;
   z-index:1001;
+  margin-bottom: 10rem;
 }
 
 /* Login ends here */
@@ -334,16 +353,15 @@ footer{
   background-color:white;
   width:100%;
   height:100%;
-  position:absolute;
+
+  
   
   top:400px;
   z-index:1001;
 
 
 }
-.signupForm{
-margin-top:10%;
-}
+
 /* Signup ends here */
 
 /* Login Container ends here */
@@ -353,8 +371,43 @@ margin-top:10%;
 .mission {
   display: block;
   margin: 5rem;
+/* Mission ends here */
 }
 
 
-/* Mission ends here */
+/* Community Landing starts here  */
+.communityLanding{
+  width:100%;
+  height:100%;
+  padding-top:20%;
+  
+  background-color:white;
+  position:absolute;
+  left:0;
+  top:0;
+}
+/* Community Landing ends here */
+
+/*About section (NAVBAR) starts here*/
+
+.AboutCommunity {
+  display: block;
+  padding: 0;
+  margin-left: 40rem;
+  margin-right: 40rem;
+  
+}
+.AbFoodIns {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.AbFoodDsrt {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.ABBenGarden {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+/*About section (NAVBAR) ends here*/
 
