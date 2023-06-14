@@ -54,8 +54,8 @@ function App() {
         
 
 
-        <Forum />
         <Articles />
+        <Forum />
         <Footer />
 
 
