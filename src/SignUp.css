@@ -5,6 +5,7 @@
     justify-content: center;
     text-align: center;
     align-content: center;
+    margin-bottom: 5rem;
 }
 .signupForm {
     display: grid;
