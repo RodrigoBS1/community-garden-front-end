@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
+
 // import Forum from "./components/Forum";
 import GeneralCarousel from "./components/GeneralCarousel";
 import SeasonInfo from "./components/SeasonInfo";
