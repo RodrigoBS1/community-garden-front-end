@@ -9,8 +9,10 @@ import "../SignUp.css"
 
 const SignUp = () => {
     let myCity = ''
+    let newID
+    let newUser
     // const [showGardens, setShowGardens ] = useState(['none'])
-    const [ citySel, setCitySel ] = useState('')
+    // const [ citySel, setCitySel ] = useState('')
     // console.log(showGardens)
     const navigate = useNavigate()
     const [ userInfo, setUserInfo ] = useState ({
@@ -23,6 +25,7 @@ const SignUp = () => {
         state:'',
         zipcode:'',
         email:''
+        // garden:''
 })
     const handleChange = (event) => {
         setUserInfo({...userInfo, [event.target.name] : event.target.value})
@@ -36,13 +39,14 @@ const SignUp = () => {
 
     const handleSubmit = async (event) => {
         // setCitySel(userInfo.city)
-        console.log(citySel)
+      
         console.log('clicked submit')
         event.preventDefault()
         console.log(userInfo)
+        console.log(userInfo.garden)
         myCity = userInfo.city
-        setCitySel(userInfo.city)
-        console.log(citySel)
+       
+       
         console.log(myCity)
         
        
@@ -59,6 +63,10 @@ const SignUp = () => {
             if (response.ok){
                 const responseData = await response.json();
                 console.log('Data submitted successfully:',responseData);
+                newID = responseData.id 
+                console.log(newID)
+                newUser = responseData.userName
+                console.log(newUser)
             } else{
                 console.error('Error submitting data:',response.status);
                 }
@@ -66,6 +74,8 @@ const SignUp = () => {
                 console.error('Error submitting data:',error)
             
         }
+     
+        console.log(newID)
         setUserInfo({ 
             firstName:'',
             lastName:'',
@@ -76,9 +86,10 @@ const SignUp = () => {
             state:'',
             zipcode:'',
             email:''
+            // garden:''
         })
     //    setShowGardens('block') 
-    navigate(`/localgardens/${myCity}`)
+    navigate(`/localgardens/${newID}_${myCity}_${newUser}`)
 
     }
 
@@ -114,13 +125,13 @@ const SignUp = () => {
                     <label htmlFor="phoneNumber" >Phone Number: </label>
                     <input className='inputSignup' onChange={handleChange} type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" />
                 </div>
+                
+             
                 <div className='buttonSubmitGarden'>
                 <button className='buttonGarden'>Find My Garden</button>
                 </div>
             </form>
-            {/* <div className="localGardenDisplay" style={{display:showGardens}}>
-                <LocalGardens  city={citySel}/>
-            </div> */}
+            
         </div>
     )
 }

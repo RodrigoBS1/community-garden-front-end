@@ -365,9 +365,43 @@ margin-top:10%;
 .mission {
   display: block;
   margin: 5rem;
+/* Mission ends here */
 }
 
 
-/* Mission ends here */
+/* Community Landing starts here  */
+.communityLanding{
+  width:100%;
+  height:100%;
+  padding-top:20%;
+  
+  background-color:white;
+  position:absolute;
+  left:0;
+  top:0;
+}
+/* Community Landing ends here */
 
+/*About section (NAVBAR) starts here*/
+
+.AboutCommunity {
+  display: block;
+  padding: 0;
+  margin-left: 40rem;
+  margin-right: 40rem;
+  
+}
+.AbFoodIns {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.AbFoodDsrt {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.ABBenGarden {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+/*About section (NAVBAR) ends here*/
 
