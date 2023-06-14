@@ -41,13 +41,17 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/seasoninfo/:season' element={<SeasonInfo />} />
           <Route path='/growinfo/:season' element={<GrowInfo />} />
-
           <Route path='/about' element={<About />} />
+
+          <Route path='/localgardens/:city' element={<LocalGardens />} />
+
 
           <Route path='/localgardens/:userInfo' element={<LocalGardens />} />
           <Route path='/communitylanding/:userInfo' element={<CommunityLanding />} />
 
+
         </Routes>
+        
 
         {/* <Forum /> */}
         {/* <Articles /> */}
